@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_06_11_146100) do
     t.string "kana", null: false
     t.integer "sex", null: false
     t.date "birthday"
+    t.text "image"
     t.integer "phone_number"
     t.integer "sell_phone_number"
     t.integer "emergency_phone_number"
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_06_11_146100) do
   create_table "institutions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "kana", null: false
+    t.text "image"
     t.integer "phone_number_one"
     t.integer "phone_number_two"
     t.integer "postal_code"

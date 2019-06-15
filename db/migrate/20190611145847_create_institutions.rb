@@ -3,6 +3,7 @@ class CreateInstitutions < ActiveRecord::Migration[5.2]
     create_table :institutions do |t|
       t.string :name, null: false
       t.string :kana, null: false
+      t.text :image
       t.integer :phone_number_one
       t.integer :phone_number_two
       t.integer :postal_code

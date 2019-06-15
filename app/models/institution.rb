@@ -4,4 +4,6 @@ class Institution < ApplicationRecord
   has_many :transactions
   belongs_to :institution_types
   belongs_to :prefecture
+
+  mount_uploader :image, ImagesUploader
 end

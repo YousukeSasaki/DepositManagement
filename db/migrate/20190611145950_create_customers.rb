@@ -5,6 +5,7 @@ class CreateCustomers < ActiveRecord::Migration[5.2]
       t.string :kana, null: false
       t.integer :sex, null: false
       t.date :birthday
+      t.text :image
       t.integer :phone_number
       t.integer :sell_phone_number
       t.integer :emergency_phone_number

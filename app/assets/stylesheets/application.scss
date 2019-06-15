@@ -1,0 +1,9 @@
+@import "config/reset.scss";
+@import "config/variable.scss";
+@import "config/common.scss";
+
+@import "module/sidebar.scss";
+
+@import "module/transactions/index.scss";
+@import "module/institutions/institutions.scss";
+@import "module/customers/customers.scss";
