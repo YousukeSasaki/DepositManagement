@@ -1,0 +1,23 @@
+.sidebar {
+  width: 120px;
+  padding: 20px 0;
+  background-color: $liteblue;
+  border-right: solid 1px $darkblue;
+  &__title {
+    padding-bottom: 20px;
+    font-size: 25px;
+    text-align: center;
+  }
+  &__user {
+    padding-bottom: 25px;
+    text-align: center;
+  }
+  &__menu {
+    &__box {
+      padding: 10px 0 10px 20px;
+      border-top: solid 0.2px #97c1dc;
+      &__list {
+      }
+    }
+  }
+}
