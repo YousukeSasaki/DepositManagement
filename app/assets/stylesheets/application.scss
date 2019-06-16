@@ -3,7 +3,13 @@
 @import "config/common.scss";
 
 @import "module/sidebar.scss";
+@import "module/breadcrumb.scss";
+@import "module/flash.scss";
+
+
 
 @import "module/transactions/index.scss";
+
+@import "module/customers/new.scss";
+
 @import "module/institutions/institutions.scss";
-@import "module/customers/customers.scss";

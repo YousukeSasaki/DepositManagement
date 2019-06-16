@@ -6,10 +6,10 @@ class CreateCustomers < ActiveRecord::Migration[5.2]
       t.integer :sex, null: false
       t.date :birthday
       t.text :image
-      t.integer :phone_number
-      t.integer :sell_phone_number
-      t.integer :emergency_phone_number
-      t.integer :postal_code
+      t.string :phone_number
+      t.string :cell_phone_number
+      t.string :emergency_phone_number
+      t.string :postal_code
       t.references :prefecture, foreign_key: true
       t.string :city
       t.text :address

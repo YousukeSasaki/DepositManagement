@@ -1,0 +1,24 @@
+.breadcrumbs-box {
+  width: 100%;
+  height: 48px;
+  background-color: $cream;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  .breadcrumbs {
+    display: block;
+    margin: 0 auto;
+    padding-left: 40px;
+    line-height: 48px;
+    a {
+      text-decoration: none;
+      color: inherit;
+      &:hover {
+        @include link_hover();
+      }
+    }
+    #breadcrumbs-icon {
+      margin: 0 8px;
+      font-size: 10px;
+      color: black;
+    }
+  }
+}
