@@ -1,9 +1,10 @@
 .sidebar {
   float: left;
   width: 120px;
-  // height: 100vh; 
+  height: 100vh;
   background-color: $liteblue;
   border-right: solid 1px $darkblue;
+  overflow: scroll;
   &__title {
     padding: 20px 0;
     font-size: 25px;
@@ -17,8 +18,6 @@
     &__box {
       padding: 10px 0 10px 20px;
       border-top: solid 0.2px #97c1dc;
-      &__list {
-      }
     }
   }
 }
