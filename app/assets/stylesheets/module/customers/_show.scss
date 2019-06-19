@@ -1,0 +1,57 @@
+.cus-show {
+  width: 550px;
+  padding: 40px 60px;
+  margin: 40px auto;
+  border: solid 1px black;
+  background-color: $cream;
+  display: flex;
+  & .required::after {
+    content: '必須';
+    @include require;
+    background-color: $red;
+  }
+  & .required-gray::after {
+    content: '任意';
+    @include require;
+    background-color: $gray;
+  }
+  &--left {
+    width: 300px;
+    &__field,#customer_prefecture_id {
+      width: 300px;
+      margin: 0 0 15px 0;
+    }
+    &__box {
+      display: flex;
+      margin: 0 0 15px 0;
+    }
+    &__sex {
+      width: 80px;
+    }
+    &__birthday {
+      margin-left: auto;
+    }
+    &__submit {
+      width: 80px;
+      height: 40px;
+      margin: 20px 20px;
+      padding: 0 auto ;
+      text-align: center;
+      line-height: 40px;
+      background-color: $gray;
+      border-radius: 10px;
+    }
+  }
+  &--right {
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    &__image {
+      display: block;
+      width: 150px;
+      height: 150px;
+      background-color: $gray;
+      border-radius: 3px; 
+    }
+  }
+}

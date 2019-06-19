@@ -1,11 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+html body{
+  width: 100vw;
+  height: 100vh;
+  color:#000;
+  background:#FFF;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  background: image-url('blue004.jpg');
+  background-size: cover;
+}
+
 .wrapper {
+  height: 100vh;
   width: calc(100% - 121px);
   float: left;
+  overflow: scroll;
 }
 
 @mixin link_hover(){
-  opacity: 0.8;
+  opacity: 0.6;
+  cursor: pointer;
   text-decoration: underline;
+}
+
+@mixin link_hover_no_line(){
+  opacity: 0.6;
+  cursor: pointer;
 }
 
 @mixin require{
