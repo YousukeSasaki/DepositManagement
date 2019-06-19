@@ -1,8 +1,9 @@
 class CustomersController < ApplicationController
   layout "main_application"
+  before_action :set_customer, only: [:show, :edit]
 
   def index
-    @customers = Customer.all
+    @customers = Customer.all.order('id DESC')
   end
 
   def new
@@ -11,7 +12,6 @@ class CustomersController < ApplicationController
 
   def create
     customer = Customer.new(customer_params)
-    binding.pry
     if customer.save
       flash[:notice] = "登録が完了しました"
       redirect_to customers_path
@@ -21,7 +21,18 @@ class CustomersController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
+  def edit
+  end
+
   private
+
+  def set_customer
+    @customer = Customer.find(params[:id])
+  end
 
   def customer_params
     params.require(:customer).permit(:name, :kana, :sex, :birthday, :phone_number, :cell_phone_number, :emergency_phone_number, :postal_code, :prefecture_id, :city, :address, :building, :start_date, :image)
