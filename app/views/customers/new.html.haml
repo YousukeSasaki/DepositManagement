@@ -56,19 +56,21 @@
       .cus-new--left__box
         .cus-new--left__start_date
           = f.label :start_date, "利用開始日", class: "cus-new--left__label"
-          -# = f.text_field :start_date, class: "cus-new--left__field"
           = raw sprintf(f.date_select( :start_date, 
             prompt: "--",
               use_two_digit_numbers: true,
-              start_year: Time.now.year,
-              end_year: 1900,
+              start_year: 1900,
+              end_year: Time.now.year,
               date_separator: '%s'),
               '年 ', '月 ') + '日'
         %label.cus-new--left__submit
           登録する
           = f.submit "登録", class: "cus-new--left__submit--btn"
     .cus-new--right
+      %span.cus-new--right-title
+        画像選択
+      .cus-new--right__default
+        -# = image_tag 'default.jpg'
+      .cus-new--right__preview
       %label{class: "cus-new--right__image"}
         = f.file_field :image
-      %span.cus-new--right__image-title
-        画像選択
