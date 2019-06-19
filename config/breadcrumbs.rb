@@ -2,8 +2,32 @@ crumb :root do
   link "トップ", root_path
 end
 
+crumb :customer_parent do
+  link "利用者情報", customers_path
+end
+
+# customers#new
 crumb :new_customer do
   link "利用者登録", new_customer_path
+  parent :customer_parent
+end
+
+# customers#index
+crumb :customers do
+  link "一覧表示", customers_path
+  parent :customer_parent
+end
+
+# customers#show
+crumb :customer do |customer|
+  link customer.name, customer_path(customer)
+  parent :customers
+end
+
+# customers#edit
+crumb :edit_customer do |customer|
+  link "編集", edit_customer_path(customer)
+  parent :customer
 end
 
 # crumb :projects do
