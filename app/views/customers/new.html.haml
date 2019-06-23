@@ -11,14 +11,6 @@
         %span.required
         = f.text_field :kana, class: "cus-new--left__field"
       .cus-new--left__box
-        .cus-new--left__sex
-          %label.cus-new--left__label.sex
-            性別
-          %span.required
-          %label 男
-          = f.radio_button :sex, 0
-          %label 女
-          = f.radio_button :sex, 1
         .cus-new--left__birthday
           = f.label :birthday, "生年月日", class: "cus-new--left__label birthday"
           .cus-new--left__birthday--input
@@ -29,6 +21,14 @@
                 end_year: 1900,
                 date_separator: '%s'),
                 '年 ', '月 ') + '日'
+        .cus-new--left__sex
+          %label.cus-new--left__label.sex
+            性別
+          %span.required
+          %label 男
+          = f.radio_button :sex, 0
+          %label 女
+          = f.radio_button :sex, 1
       .cus-new--left__phone
         = f.label :phone_number, "電話番号", class: "cus-new--left__label"
         = f.number_field :phone_number, class: "cus-new--left__field"
@@ -56,21 +56,19 @@
       .cus-new--left__box
         .cus-new--left__start_date
           = f.label :start_date, "利用開始日", class: "cus-new--left__label"
-          = raw sprintf(f.date_select( :start_date, 
-            prompt: "--",
+          .cus-new--left__start_date--select
+            = raw sprintf(f.date_select( :start_date, 
+              prompt: "--",
               use_two_digit_numbers: true,
               start_year: 1900,
               end_year: Time.now.year,
               date_separator: '%s'),
               '年 ', '月 ') + '日'
-        %label.cus-new--left__submit
-          登録する
-          = f.submit "登録", class: "cus-new--left__submit--btn"
+        = f.submit "登録", class: "cus-new--left__submit"
     .cus-new--right
       %span.cus-new--right-title
         画像選択
       .cus-new--right__default
-        -# = image_tag 'default.jpg'
       .cus-new--right__preview
       %label{class: "cus-new--right__image"}
         = f.file_field :image
