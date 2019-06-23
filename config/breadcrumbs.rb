@@ -26,7 +26,7 @@ end
 
 # customers#edit
 crumb :edit_customer do |customer|
-  link "編集", edit_customer_path(customer)
+  link customer.name, edit_customer_path(customer)
   parent :customer
 end
 
