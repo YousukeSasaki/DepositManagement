@@ -5,5 +5,5 @@ class Institution < ApplicationRecord
   belongs_to :institution_types
   belongs_to :prefecture
 
-  mount_uploader :image, ImagesUploader
+  mount_uploader :image, ImageUploader
 end
