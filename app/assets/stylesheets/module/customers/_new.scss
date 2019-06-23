@@ -1,3 +1,5 @@
+// customers/edit.html.hamlも共通
+
 .cus-new {
   width: 550px;
   padding: 40px 60px;
@@ -7,6 +9,11 @@
   form {
     display: flex;
     width: 100%;
+  }
+  input {
+    padding-left: 5px;
+    border-radius: 5px;
+    border: solid 1px $gray;
   }
   & .required::after {
     content: '必須';
@@ -22,27 +29,35 @@
     width: 300px;
     &__field,#customer_prefecture_id{
       width: 300px;
-      margin: 0 0 15px 0;
+      margin: 0 0 10px 0;
     }
     &__box {
       display: flex;
-      margin: 0 0 15px 0;
+      margin: 0 0 10px 0;
     }
     &__sex {
       width: 80px;
-    }
-    &__birthday {
       margin-left: auto;
     }
+    &__birthday {
+    }
+    &__start_date {
+      width: 210px;
+      &--select {
+        width: 210px;
+      }
+    }
     &__submit {
+      display: block;
       width: 80px;
       height: 40px;
-      margin: 20px 20px;
-      padding: 0 auto ;
+      margin: 5px 5px 5px 20px;
       text-align: center;
       line-height: 40px;
-      background-color: $gray;
+      background-color: $blue;
+      border: solid 1px $black;
       border-radius: 10px;
+      outline: none;
     }
   }
   &--right {
