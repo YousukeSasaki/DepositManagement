@@ -4,11 +4,13 @@ $(function() {
         console.log("customer.js OK");
     });
 
-    $("tr[data-link]").click(function() {
+    $(document).on('click', 'tr[data-link]', function(e) {
+        e.preventDefault
         window.location = $(this).data('link')
     });
 
-    $('.cus-new--right__image').on('change', 'input[type="file"]', function(e) {
+    $(document).on('change', '.cus-new--right__image input[type="file"]', function(e) {
+        e.preventDefault
         var file = e.target.files[0],
             reader = new FileReader(),
             $preview = $(".cus-new--right__preview")
@@ -31,8 +33,6 @@ $(function() {
                     id: "preview",
                     title: file.name,
                 }));
-                // // 編集削除ボタンを表示する
-                // $('.btn-box').css('display', 'block');
             };
         })(file);
         reader.readAsDataURL(file);
