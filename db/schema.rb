@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2019_06_11_146100) do
     t.string "name", null: false
     t.integer "status", null: false
     t.string "ancestry"
+    t.integer "number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["ancestry"], name: "index_subjects_on_ancestry"

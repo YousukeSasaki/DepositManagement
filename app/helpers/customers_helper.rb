@@ -15,4 +15,14 @@ module CustomersHelper
     correct_time = str.gsub(/\+0900/, '')
     return correct_time
   end
+
+  def time_jp(time)
+    time_jp = time.strftime('%Y年%m月%d日')
+    return time_jp
+  end
+
+  def datetime_jp(datetime)
+    datetime = datetime.strftime('%Y年%m月%d日 %H:%M:%S')
+    return datetime
+  end
 end

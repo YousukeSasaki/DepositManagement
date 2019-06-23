@@ -2,14 +2,14 @@
   color: $white;
   text-align: center;
   font-size: 20px;
-  
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16);
   .notice {
     background-color: $liteblue;
     height: 30px;
     line-height: 30px;
   }
   .alert {
-    background-color: $red;
+    background-color: $pink;
     height: 30px;
     line-height: 30px;
   }

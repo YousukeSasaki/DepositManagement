@@ -1,5 +1,6 @@
 .cus-show {
-  width: 550px;
+  position: relative;
+  width: 632px;
   padding: 40px 60px;
   margin: 40px auto;
   border: solid 1px black;
@@ -16,40 +17,95 @@
     background-color: $gray;
   }
   &--left {
-    width: 300px;
-    &__field,#customer_prefecture_id {
-      width: 300px;
-      margin: 0 0 15px 0;
+    width: 510px;
+    &__label {
+      text-decoration: underline;
     }
-    &__box {
-      display: flex;
-      margin: 0 0 15px 0;
+    &__field {
+      margin-bottom: 10px;
+      padding-left: 5px;
+      height: 26px;
+      line-height: 26px;
+      border: solid 1px $gray;
+      overflow-x: scroll;
+      white-space: nowrap;
     }
-    &__sex {
+    &__short {
+      &-box {
+        display: flex;
+      }
+      &--one {
+        width: 335px;
+      }
+      &--two {
+        width: 165px;
+        margin-right: 5px;
+      }
+    }
+    &__long {
+      &-box {
+        display: flex;
+      }
+      &-three {
+        width: 165px;
+        margin-right: 5px;
+      }
+    }
+    &__postal_code {
       width: 80px;
+      margin-right: 5px;
     }
-    &__birthday {
-      margin-left: auto;
+    &__prefecture {
+      width: 90px;
+      margin-right: 5px;
+    }
+    &__city {
+      width: 325px;
+    }
+    &__address {
+      width: 175px;
+      margin-right: 5px;
+    }
+    &__building {
+      width: 325px;
+    }
+    &__start_date {
+      width: 125px;
+      margin-right: 5px;
+    }
+    &__created_at, &__updated_at {
+      width: 185px;
+      margin-right: 5px;
     }
     &__submit {
-      width: 80px;
+      display: block;
+      width: 428px;
       height: 40px;
-      margin: 20px 20px;
-      padding: 0 auto ;
+      margin: 20px auto 0;
       text-align: center;
       line-height: 40px;
-      background-color: $gray;
+      color: inherit;
+      background-color: $blue;
+      border: solid 1px $black;
       border-radius: 10px;
+      outline: none;
+      text-decoration: none;
+      &:hover {
+        @include link_hover_no_line;
+      }
     }
   }
   &--right {
-    width: 150px;
-    height: 150px;
+    position: absolute;
+    top: 65px;
+    right: 65px;
+    width: 137px;
+    height: 137px;
     margin-left: auto;
     &__image {
       display: block;
-      width: 150px;
-      height: 150px;
+      width: 137px;
+      height: 137px;
       background-color: $gray;
       border-radius: 3px; 
     }

@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   layout "main_application"
-  before_action :set_customer, only: [:show, :edit]
+  before_action :set_customer, only: [:show, :edit, :update]
 
   def index
     @customers = Customer.all.order('id DESC')
@@ -26,6 +26,16 @@ class CustomersController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @customer.update(customer_params)
+      flash[:notice] = "正常に変更されました"
+      redirect_to customers_path
+    else
+      flash[:alert] = '変更に失敗しました。必須項目を確認してください。'
+      redirect_to edit_customer_path
+    end
   end
 
   private
