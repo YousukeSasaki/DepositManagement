@@ -8,12 +8,13 @@
 
 
 
-@import "module/transactions/index.scss";
-@import "module/transactions/new.scss";
+@import "module/transactions/index";
+@import "module/transactions/new";
 
 @import "module/customers/index";
 @import "module/customers/new";
 @import "module/customers/show";
 @import "module/customers/delete_modal";
 
-@import "module/institutions/institutions.scss";
+@import "module/institutions/index";
+@import "module/institutions/new";
