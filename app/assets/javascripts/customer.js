@@ -4,15 +4,18 @@ $(function() {
         console.log("customer.js OK");
     });
 
+    // 一覧テーブルのリンク
     $(document).on('click', 'tr[data-link]', function(e) {
         e.preventDefault
         window.location = $(this).data('link')
     });
 
+    // 画像選択プレビュー
     $(document).on('change', '.cus-new--right__image input[type="file"]', function(e) {
         e.preventDefault
         var file = e.target.files[0],
             reader = new FileReader(),
+            $default = $(".cus-new--right__default")
             $preview = $(".cus-new--right__preview")
 
         // 画像ファイル以外の場合は何もしない
@@ -24,6 +27,7 @@ $(function() {
         reader.onload = (function(file) {
             return function(e) {
                 // preview画像を削除する
+                $default.css('display', 'none');
                 $preview.empty();
                 // 領域の中にロードした画像を表示するimageタグを追加
                 $preview.append($('<img>').attr({
@@ -37,4 +41,19 @@ $(function() {
         })(file);
         reader.readAsDataURL(file);
     });
+
+    // 利用者情報削除モーダルウィンドウ表示
+    $(document).on('click', '#delete__modal--btn', function(e) {
+        e.preventDefault();
+        $(".mask").removeClass("hidden");
+        $(".delete__modal").removeClass("hidden");
+        $('html,body').animate( {scrollTop:0}, 1);
+    });
+
+    // モーダルウィンドウを閉じる
+    $(document).on('click', '.mask', function() {
+        $(".mask").addClass("hidden");
+        $(".delete__modal").addClass("hidden");
+    });
+
 });
