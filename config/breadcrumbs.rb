@@ -2,19 +2,61 @@ crumb :root do
   link "トップ", root_path
 end
 
-crumb :customer_parent do
-  link "利用者情報", customers_path
+crumb :transaction_parent do
+  link "取引情報", transactions_path
 end
 
-# customers#new
-crumb :new_customer do
-  link "利用者登録", new_customer_path
-  parent :customer_parent
+# transactions#index
+crumb :transactions do
+  link "一覧表示", transactions_path
+  parent :transaction_parent
+end
+
+# transactions#new_choice
+crumb :new_choice_transactions do
+  link "取引登録利用者選択", new_choice_transactions_path
+  parent :transaction_parent
+end
+
+# transactions#new
+crumb :new_transactions do |customer|
+  link customer.name, new_transactions_path(customer)
+  parent :new_choice_transactions
+end
+
+# transactions#customer_choice
+crumb :customer_choice_transactions do
+  link "利用者選択", customer_choice_transactions_path
+  parent :transaction_parent
+end
+
+# transactions#customer
+crumb :customer_transactions do |customer|
+  link "#{customer.name} 一覧表示", customer_transactions_path(customer)
+  parent :customer_choice_transactions
+end
+
+# transactions#show
+crumb :transaction do |transaction|
+  link "一覧表示", transaction_path(transaction)
+  parent :transaction_parent
+end
+
+
+
+crumb :customer_parent do
+  link "利用者情報", customers_path
 end
 
 # customers#index
 crumb :customers do
   link "一覧表示", customers_path
+  parent :customer_parent
+end
+
+# customers#new
+crumb :new_customer do
+  link "利用者登録", new_customer_path
   parent :customer_parent
 end
 
@@ -29,28 +71,3 @@ crumb :edit_customer do |customer|
   link customer.name, edit_customer_path(customer)
   parent :customer
 end
-
-# crumb :projects do
-#   link "Projects", projects_path
-# end
-
-# crumb :project do |project|
-#   link project.name, project_path(project)
-#   parent :projects
-# end
-
-# crumb :project_issues do |project|
-#   link "Issues", project_issues_path(project)
-#   parent :project, project
-# end
-
-# crumb :issue do |issue|
-#   link issue.title, issue_path(issue)
-#   parent :project_issues, issue.project
-# end
-
-# If you want to split your breadcrumbs configuration over multiple files, you
-# can create a folder named `config/breadcrumbs` and put your configuration
-# files there. All *.rb files (e.g. `frontend.rb` or `products.rb`) in that
-# folder are loaded and reloaded automatically when you change them, just like
-# this file (`config/breadcrumbs.rb`).
