@@ -4,8 +4,8 @@ class CreateInstitutions < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.string :kana, null: false
       t.text :image
-      t.integer :phone_number_one
-      t.integer :phone_number_two
+      t.string :phone_number_one
+      t.string :phone_number_two
       t.integer :postal_code
       t.references :prefecture, foreign_key: true, optional: true
       t.string :city
