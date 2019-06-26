@@ -1,0 +1,8 @@
+.mask.hidden
+.delete__modal.hidden
+  .delete__modal__content
+    %h2 削除確認
+    .delete__modal__content__info
+      削除すると二度と復元できません。
+      本当に削除しますか？
+  = link_to "削除する", customer_path, method: :DELETE, class: 'delete__modal--btn' 
