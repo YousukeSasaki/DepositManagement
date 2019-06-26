@@ -1,0 +1,12 @@
+%tr{"data-link": "#{new_transactions_path(customer)}", class: "cus-index__table__item"}
+  %th.cus-index__table__item-id.center #{customer.id}
+  %th.cus-index__table__item-image.center
+    - if customer.image.present?
+      = image_tag "#{customer.image.url}", class: "image"
+    - else
+      = image_tag "default.jpg", class: "image"
+  %th.cus-index__table__item-name.left #{customer.name}
+  %th.cus-index__table__item-kana.left #{customer.kana}
+  %th.cus-index__table__item-sex.center #{sex_change(customer.sex)}
+  %th.cus-index__table__item-birthday.center #{customer.birthday}
+  %th.cus-index__table__item-address.left #{full_address(customer)}
