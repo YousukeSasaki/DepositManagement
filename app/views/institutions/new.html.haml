@@ -1,0 +1,46 @@
+- breadcrumb :new_institution
+
+.ins-new
+  = form_with(model: @institution, local: true) do |f|
+    .ins-new--left
+      .ins-new--left__one
+        = f.label :name, "施設名", class: "ins-new--left__label"
+        %span.required
+        = f.text_field :name, class: "ins-new--left__field"
+      .ins-new--left__one
+        = f.label :kana, "フリガナ", class: "ins-new--left__label"
+        %span.required
+        = f.text_field :kana, class: "ins-new--left__field"
+      .ins-new--left__one
+        = f.label :phone_number_one, "電話番号１", class: "ins-new--left__label"
+        = f.number_field :phone_number_one, class: "ins-new--left__field"
+      .ins-new--left__one
+        = f.label :phone_number_two, "電話番号２", class: "ins-new--left__label"
+        = f.number_field :phone_number_two, class: "ins-new--left__field"
+      .ins-new--left__one
+        = f.label :postal_code, "郵便番号", class: "ins-new--left__label"
+        = f.number_field :postal_code, class: "ins-new--left__field"
+      .ins-new--left__one
+        = f.label :prefecture_id, "都道府県", class: "ins-new--left__label"
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, {class: "ins-new--left__field"}
+      .ins-new--left__one
+        = f.label :city, "市区町村", class: "ins-new--left__label"
+        = f.text_field :city, class: "ins-new--left__field"
+      .ins-new--left__one
+        = f.label :address, "番地", class: "ins-new--left__label"
+        = f.text_field :address, class: "ins-new--left__field"
+      .ins-new--left__one
+        = f.label :building, "建物名", class: "ins-new--left__label"
+        = f.text_field :building, class: "ins-new--left__field"
+      .ins-new--left__one
+        = f.label :institution_type_id, "施設種別", class: "ins-new--left__label"
+        = f.collection_select :institution_type_id, InstitutionType.all, :id, :name, {prompt: "---"}, {class: "ins-new--left__field"}
+      = f.submit "登録", class: "ins-new--left__submit"
+
+    .ins-new--right
+      %span.ins-new--right-title
+        画像選択
+      .ins-new--right__default
+      .ins-new--right__preview
+      %label{class: "ins-new--right__image"}
+        = f.file_field :image
