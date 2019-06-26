@@ -1,0 +1,13 @@
+- breadcrumb :new_choice_transactions
+.cus-index
+  %table.cus-index__table
+    %tr.cus-index__table__col
+      %th.cus-index__table__col-id.center No.
+      %th.cus-index__table__col-image.center 画像
+      %th.cus-index__table__col-name.center 氏名
+      %th.cus-index__table__col-kana.center フリガナ
+      %th.cus-index__table__col-sex.center 性別
+      %th.cus-index__table__col-birthday.center 生年月日
+      %th.cus-index__table__col-address.center 住所
+
+    = render partial: "transactions/new_choice", collection: @customers, as: "customer"
