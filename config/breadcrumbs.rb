@@ -71,3 +71,33 @@ crumb :edit_customer do |customer|
   link customer.name, edit_customer_path(customer)
   parent :customer
 end
+
+
+
+crumb :institution_parent do
+  link "施設情報", institutions_path
+end
+
+# institutions#index
+crumb :institutions do
+  link "一覧表示", institutions_path
+  parent :institution_parent
+end
+
+# institutions#new
+crumb :new_institution do
+  link "施設登録", new_institution_path
+  parent :institution_parent
+end
+
+# institutions#show
+crumb :institution do |institution|
+  link institution.name, institution_path(institution)
+  parent :institutions
+end
+
+# institutions#edit
+crumb :edit_institution do |institution|
+  link institution.name, edit_institution_path(institution)
+  parent :institution
+end
