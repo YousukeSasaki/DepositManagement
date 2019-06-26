@@ -1,5 +1,5 @@
 - breadcrumb :customer, @customer
-
+= render "layouts/delete_modal"
 .cus-show
   .cus-show--left
     .cus-show--left__short--one
@@ -52,6 +52,8 @@
       .cus-show--left__updated_at
         %label.cus-show--left__label 最終更新日
         .cus-show--left__field #{datetime_jp(@customer.updated_at)}
-    = link_to "編集する", edit_customer_path, class: "cus-show--left__submit"
+    .cus-show--left__long-box
+      = link_to "編集", edit_customer_path, class: "cus-show--left__btn edit"
+      = link_to "削除する", "", class: "cus-show--left__btn delete", id: "delete__modal--btn"
   .cus-show--right
     = image_tag "#{@customer.image.url}", class: "cus-show--right__image"
