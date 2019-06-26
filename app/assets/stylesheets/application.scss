@@ -9,9 +9,11 @@
 
 
 @import "module/transactions/index.scss";
+@import "module/transactions/new.scss";
 
 @import "module/customers/index";
 @import "module/customers/new";
 @import "module/customers/show";
+@import "module/customers/delete_modal";
 
 @import "module/institutions/institutions.scss";
