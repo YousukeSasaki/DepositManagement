@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   layout "main_application"
-  before_action :set_customer, only: [:show, :edit, :update]
+  before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   def index
     @customers = Customer.all.order('id DESC')
@@ -11,30 +11,33 @@ class CustomersController < ApplicationController
   end
 
   def create
-    customer = Customer.new(customer_params)
-    if customer.save
+    @customer = Customer.new(customer_params)
+    if @customer.save
       flash[:notice] = "登録が完了しました"
       redirect_to customers_path
     else
-      flash[:alert] = '登録が失敗しました。必須項目を確認してください。'
-      redirect_to new_customer_path
+      flash.now[:alert] = '登録が失敗しました。必須項目を確認してください。'
+      render :new
     end
-  end
-
-  def show
-
-  end
-
-  def edit
   end
 
   def update
     if @customer.update(customer_params)
-      flash[:notice] = "正常に変更されました"
+      flash.now[:notice] = "正常に変更されました"
+      render :edit
+    else
+      flash.now[:alert] = '変更に失敗しました。必須項目を確認してください。'
+      render :edit
+    end
+  end
+
+  def destroy
+    if @customer.destroy
+      flash[:notice] = "削除されました"
       redirect_to customers_path
     else
-      flash[:alert] = '変更に失敗しました。必須項目を確認してください。'
-      redirect_to edit_customer_path
+      flash[:alert] = '削除に失敗しました'
+      redirect_to customer_path(@customer)
     end
   end
 
