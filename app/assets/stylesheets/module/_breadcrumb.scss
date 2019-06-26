@@ -15,6 +15,9 @@
         @include link_hover();
       }
     }
+    & .current {
+      font-weight: bold;
+    }
     #breadcrumbs-icon {
       margin: 0 8px;
       font-size: 10px;

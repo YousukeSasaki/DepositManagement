@@ -27,7 +27,7 @@
       .tra-new--left__box
         .tra-new--left__amount--input
           = f.label :amount, "金額", class: "tra-new--left__label"
-          = f.number_field :amount, class: "tra-new--left__field", oninput: "sliceMaxLength(this, 3)"
+          = f.number_field :amount, class: "tra-new--left__field", maxlength: "10"
         .tra-new--left__amount--number
           %p  ¥
       .tra-new--left__one

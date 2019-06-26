@@ -1,6 +1,6 @@
-// transactions/edit.html.hamlも共通
+//institusions/edit.html.hamlも共通
 
-.tra-new {
+.ins-new {
   width: 550px;
   padding: 40px 60px;
   margin: 40px auto;
@@ -27,51 +27,9 @@
   }
   &--left {
     width: 300px;
-    &__field{
+    &__field {
       width: 300px;
-    }
-    &__one {
-      margin-bottom: 10px;
-    }
-    &__box {
-      display: flex;
-      margin-bottom: 10px;
-    }
-    &__subject {
-      &-number {
-        width: 100px;
-        margin-right: 10px;
-        & input {
-          width: 100%;
-          height: 25px;
-        }
-      }
-      &-menu {
-        width: 190px;
-        & select {
-          width: 100%
-        }
-      }
-    }
-    &__amount {
-      &--input {
-        width: 100px;
-        margin-right: 10px;
-        & input {
-          width: 100%;
-          height: 22px;
-          text-align: right;
-        }
-      }
-      &--number {
-        width: 190px;
-        line-height: 56px;
-        & p {
-          font-size: 27px;
-          font-weight: bold;
-          text-align: right;
-        }
-      }
+      margin: 0 0 10px 0;
     }
     &__submit {
       display: block;
@@ -92,17 +50,38 @@
     width: 100px;
     height: 124px;
     margin-left: auto;
-    &__preview {
+    &-title {
+      display: inline-block;
+      width: 100px;
+      text-align: center;
+    }
+    &__default {
       position: absolute;
-      top: 24px;
       width: 100px;
       height: 100px;
-      border: solid 1px $black;
-      border-radius: 3px;
+      background-image: image-url("default.jpg");
+      background-size: cover;
+    }
+    &__preview {
+      position: absolute;
+      width: 100px;
+      height: 100px;
       & img {
         width: 100px;
         height: 100px;
         object-fit: cover;
+      }
+    }
+    &__image {
+      position: absolute;
+      display: block;
+      width: 100px;
+      height: 100px;
+      border: solid 1px $black;
+      cursor: pointer;
+      border-radius: 3px; 
+      & input {
+        display: none;
       }
     }
   }

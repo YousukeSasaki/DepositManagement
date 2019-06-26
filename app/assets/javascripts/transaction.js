@@ -30,7 +30,13 @@ $(function() {
         $(".tra-new--left__amount--number > p").text("¥ " + amount_str);
     });
 
-    function sliceMaxLength(elem, maxLength) {  
-        elem.value = elem.value.slice(0, maxLength);  
-    }  
+    $(document).on('input', '#transaction_amount', function() {
+        var value = this.value;
+        var length = this.value.length;
+        var maxlength = $(this).attr('maxlength');
+        
+        if (length > maxlength) {
+            this.value = value.slice(0, maxlength);
+        }
+    });
 });

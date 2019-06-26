@@ -16,7 +16,7 @@ class CustomersController < ApplicationController
       flash[:notice] = "登録が完了しました"
       redirect_to customers_path
     else
-      flash.now[:alert] = '登録が失敗しました。必須項目を確認してください。'
+      flash.now[:alert] = '登録に失敗しました。必須項目を確認してください。'
       render :new
     end
   end

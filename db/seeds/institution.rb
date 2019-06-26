@@ -1,0 +1,2 @@
+Institution.create(name: "AAデイサービス", kana: "エーデイケア", phone_number_one: "0441112222", phone_number_two: "0451111222", postal_code: "5671234", prefecture_id: 9, city: "BBBB市CCCC町DDDD", address: "34-56-12", building: "", institution_type_id: 10)
+Institution.create(name: "MM病院", kana: "エムエムビョウイン", phone_number_one: "0991112222", phone_number_two: "0881111222", postal_code: "9972121", prefecture_id: 40, city: "NNNNN市OOOOO町PPPPP", address: "21-34-78", building: "QQQQビル3階", institution_type_id: 3)

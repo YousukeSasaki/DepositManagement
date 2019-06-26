@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(version: 2019_06_11_146100) do
     t.string "name", null: false
     t.string "kana", null: false
     t.text "image"
-    t.integer "phone_number_one"
-    t.integer "phone_number_two"
+    t.string "phone_number_one"
+    t.string "phone_number_two"
     t.integer "postal_code"
     t.bigint "prefecture_id"
     t.string "city"
