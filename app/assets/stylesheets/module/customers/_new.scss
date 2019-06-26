@@ -77,9 +77,6 @@
       height: 100px;
       background-image: image-url("default.jpg");
       background-size: cover;
-      &:hover {
-        opacity: 0.5;
-      }
     }
     &__preview {
       position: absolute;
@@ -89,9 +86,6 @@
         width: 100px;
         height: 100px;
         object-fit: cover;
-        &:hover {
-          opacity: 0.5;
-        }
       }
     }
     &__image {
@@ -102,9 +96,6 @@
       border: solid 1px $black;
       cursor: pointer;
       border-radius: 3px; 
-      &:hover {
-        opacity: 0.5;
-      }
       & input {
         display: none;
       }
