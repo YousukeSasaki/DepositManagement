@@ -5,14 +5,14 @@
     NAMEさん
   .sidebar__menu
     .sidebar__menu__box#transactions
-      = link_to "取引", transactions_path
+      = link_to "取引情報", transactions_path
       %ul.sidebar__menu__box__list
         %li.sidebar__menu__box__list-child
-          = link_to "取引登録", "#"
+          = link_to "取引登録", new_choice_transactions_path
         %li.sidebar__menu__box__list-child
-          = link_to "一覧表示", "#"
+          = link_to "一覧表示", transactions_path
         %li.sidebar__menu__box__list-child
-          = link_to "詳細検索", "#"
+          = link_to "利用者別表示", customer_choice_transactions_path
     .sidebar__menu__box#customers
       = link_to "利用者情報", customers_path
       %ul.sidebar__menu__box__list
