@@ -1,0 +1,88 @@
+//institusions/edit.html.hamlも共通
+
+.ins-new {
+  width: 550px;
+  padding: 40px 60px;
+  margin: 40px auto;
+  border: solid 1px black;
+  background-color: $cream;
+  form {
+    display: flex;
+    width: 100%;
+  }
+  input {
+    padding-left: 5px;
+    border-radius: 5px;
+    border: solid 1px $gray;
+  }
+  & .required::after {
+    content: '必須';
+    @include require;
+    background-color: $red;
+  }
+  & .required-gray::after {
+    content: '任意';
+    @include require;
+    background-color: $gray;
+  }
+  &--left {
+    width: 300px;
+    &__field {
+      width: 300px;
+      margin: 0 0 10px 0;
+    }
+    &__submit {
+      display: block;
+      width: 80px;
+      height: 40px;
+      margin: 5px 5px 5px 20px;
+      color: $white;
+      text-align: center;
+      line-height: 40px;
+      background-color: $blue;
+      border: solid 1px $black;
+      border-radius: 10px;
+      outline: none;
+    }
+  }
+  &--right {
+    position: relative;
+    width: 100px;
+    height: 124px;
+    margin-left: auto;
+    &-title {
+      display: inline-block;
+      width: 100px;
+      text-align: center;
+    }
+    &__default {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-image: image-url("default.jpg");
+      background-size: cover;
+    }
+    &__preview {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      & img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+      }
+    }
+    &__image {
+      position: absolute;
+      display: block;
+      width: 100px;
+      height: 100px;
+      border: solid 1px $black;
+      cursor: pointer;
+      border-radius: 3px; 
+      & input {
+        display: none;
+      }
+    }
+  }
+}
