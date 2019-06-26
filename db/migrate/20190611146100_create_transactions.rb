@@ -7,7 +7,7 @@ class CreateTransactions < ActiveRecord::Migration[5.2]
       t.references :subject, foreign_key: true
       t.integer :amount, null: false
       t.references :institution, foreign_key: true
-      t.text :summary, limit: 255
+      t.text :summary, limit: 100
       t.references :user, foreign_key: true
       t.timestamps
     end
