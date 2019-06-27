@@ -1,0 +1,51 @@
+- breadcrumb :institution, @institution
+= render "layouts/delete_modal", path: institution_path
+
+.top-title 施設詳細（#{@institution.name}）
+.ins-show
+  .ins-show--left
+    .ins-show--left__short--one
+      %label.ins-show--left__label 名前
+      .ins-show--left__field #{@institution.name}
+    .ins-show--left__short--one
+      %label.ins-show--left__label フリガナ
+      .ins-show--left__field #{@institution.kana}
+    .ins-show--left__short--one
+      %label.ins-show--left__label 種別
+      .ins-show--left__field #{@institution.institution_type.name}
+    .ins-show--left__long-box
+      .ins-show--left__long--two
+        %label.ins-show--left__label 電話番号１
+        .ins-show--left__field #{@institution.phone_number_one}
+      .ins-show--left__long--two
+        %label.ins-show--left__label 電話番号２
+        .ins-show--left__field #{@institution.phone_number_two}
+    .ins-show--left__long-box
+      .ins-show--left__postal_code
+        %label.ins-show--left__label 郵便番号
+        .ins-show--left__field #{@institution.postal_code}
+      .ins-show--left__prefecture
+        %label.ins-show--left__label 都道府県
+        .ins-show--left__field #{@institution.prefecture.name}
+      .ins-show--left__city
+        %label.ins-show--left__label 市区町村
+        .ins-show--left__field #{@institution.city}
+    .ins-show--left__long-box
+      .ins-show--left__address
+        %label.ins-show--left__label 番地
+        .ins-show--left__field #{@institution.address}
+      .ins-show--left__building
+        %label.ins-show--left__label 建物名
+        .ins-show--left__field #{@institution.building}
+    .ins-show--left__long-box
+      .ins-show--left__created_at
+        %label.ins-show--left__label 登録日
+        .ins-show--left__field #{datetime_jp(@institution.created_at)}
+      .ins-show--left__updated_at
+        %label.ins-show--left__label 最終更新日
+        .ins-show--left__field #{datetime_jp(@institution.updated_at)}
+    .ins-show--left__long-box
+      = link_to "編集", edit_institution_path, class: "ins-show--left__btn edit"
+      = link_to "削除する", "", class: "ins-show--left__btn delete", id: "delete__modal--btn"
+  .ins-show--right
+    = image_tag "#{@institution.image.url}", class: "ins-show--right__image"
