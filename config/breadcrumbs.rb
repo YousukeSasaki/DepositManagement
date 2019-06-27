@@ -69,7 +69,7 @@ end
 # customers#edit
 crumb :edit_customer do |customer|
   link "編集（#{customer.name}）", edit_customer_path(customer)
-  parent :customer
+  parent customer
 end
 
 
@@ -98,6 +98,6 @@ end
 
 # institutions#edit
 crumb :edit_institution do |institution|
-  link "編集#{institution.name}", edit_institution_path(institution)
-  parent :institution
+  link "編集（#{institution.name}）", edit_institution_path(institution)
+  parent institution
 end
