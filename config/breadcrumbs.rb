@@ -14,31 +14,31 @@ end
 
 # transactions#new_choice
 crumb :new_choice_transactions do
-  link "取引登録利用者選択", new_choice_transactions_path
+  link "登録利用者選択", new_choice_transactions_path
   parent :transaction_parent
 end
 
 # transactions#new
 crumb :new_transactions do |customer|
-  link customer.name, new_transactions_path(customer)
+  link "取引登録（#{customer.name}）", new_transactions_path(customer)
   parent :new_choice_transactions
 end
 
 # transactions#customer_choice
 crumb :customer_choice_transactions do
-  link "利用者選択", customer_choice_transactions_path
+  link "閲覧利用者選択", customer_choice_transactions_path
   parent :transaction_parent
 end
 
 # transactions#customer
 crumb :customer_transactions do |customer|
-  link "#{customer.name} 一覧表示", customer_transactions_path(customer)
+  link "取引一覧（#{customer.name}）", customer_transactions_path(customer)
   parent :customer_choice_transactions
 end
 
 # transactions#show
 crumb :transaction do |transaction|
-  link "一覧表示", transaction_path(transaction)
+  link "取引詳細", transaction_path(transaction)
   parent :transaction_parent
 end
 
@@ -56,19 +56,19 @@ end
 
 # customers#new
 crumb :new_customer do
-  link "利用者登録", new_customer_path
+  link "新規登録", new_customer_path
   parent :customer_parent
 end
 
 # customers#show
 crumb :customer do |customer|
-  link customer.name, customer_path(customer)
+  link "利用者詳細（#{customer.name}）", customer_path(customer)
   parent :customers
 end
 
 # customers#edit
 crumb :edit_customer do |customer|
-  link customer.name, edit_customer_path(customer)
+  link "編集（#{customer.name}）", edit_customer_path(customer)
   parent :customer
 end
 
@@ -86,18 +86,18 @@ end
 
 # institutions#new
 crumb :new_institution do
-  link "施設登録", new_institution_path
+  link "新規登録", new_institution_path
   parent :institution_parent
 end
 
 # institutions#show
 crumb :institution do |institution|
-  link institution.name, institution_path(institution)
+  link "施設詳細（#{institution.name}）", institution_path(institution)
   parent :institutions
 end
 
 # institutions#edit
 crumb :edit_institution do |institution|
-  link institution.name, edit_institution_path(institution)
+  link "編集#{institution.name}", edit_institution_path(institution)
   parent :institution
 end
