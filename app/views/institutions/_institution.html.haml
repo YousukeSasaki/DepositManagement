@@ -1,0 +1,11 @@
+%tr{"data-link": "#{institution_path(institution)}", class: "ins-index__table__item"}
+  %th.ins-index__table__item-id.center #{institution.id}
+  %th.ins-index__table__item-image.center
+    - if institution.image.present?
+      = image_tag "#{institution.image.url}", class: "image"
+    - else
+      = image_tag "default.jpg", class: "image"
+  %th.ins-index__table__item-name.left #{institution.name}
+  %th.ins-index__table__item-type.left #{institution.institution_type.name}
+  %th.ins-index__table__item-phone.center #{institution.phone_number_one}
+  %th.ins-index__table__item-address.left #{full_address(institution)}
