@@ -1,5 +1,6 @@
 class InstitutionsController < ApplicationController
   layout "main_application"
+  before_action :set_institutions, only: [:index]
   before_action :set_institution, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -8,7 +9,6 @@ class InstitutionsController < ApplicationController
 
   def create
     @institution = Institution.new(institution_params)
-    binding.pry
     if @institution.save
       flash[:notice] = "登録が完了しました"
       redirect_to institutions_path
@@ -19,6 +19,10 @@ class InstitutionsController < ApplicationController
   end
 
   private
+
+  def set_institutions
+    @institutions = Institution.all.order('id DESC')
+  end
 
   def set_institution
     @institution = Institution.find(params[:id])

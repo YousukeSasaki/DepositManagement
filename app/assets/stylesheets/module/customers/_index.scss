@@ -27,7 +27,7 @@
         @include link_hover_no_line;
       }
       &-id {
-        width: 40px;
+        min-width: 50px;
       }
       &-image {
         width: 70px;

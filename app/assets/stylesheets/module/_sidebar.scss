@@ -2,9 +2,17 @@
   float: left;
   min-width: 120px;
   height: 100vh;
-  background-color: $liteblue;
+  color: #0053A6;
+  background-color: #E4EEF6;
   border-right: solid 1px $darkblue;
   overflow: auto;
+  & a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      @include link_hover;
+    }
+  }
   &__title {
     padding: 20px 0;
     font-size: 25px;

@@ -1,1 +1,14 @@
 - breadcrumb :institutions
+
+.top-title 施設一覧
+.ins-index
+  %table.ins-index__table
+    %tr.ins-index__table__col
+      %th.ins-index__table__col-id.center No.
+      %th.ins-index__table__col-image.center 画像
+      %th.ins-index__table__col-name.center 名称
+      %th.ins-index__table__col-type.center 種別
+      %th.ins-index__table__col-phone.center 電話番号
+      %th.ins-index__table__col-address.center 住所
+
+    = render @institutions

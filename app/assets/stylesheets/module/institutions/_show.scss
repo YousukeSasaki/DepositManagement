@@ -1,4 +1,4 @@
-.cus-show {
+.ins-show {
   position: relative;
   width: 632px;
   padding: 40px 60px;
@@ -29,7 +29,7 @@
       background-color: $white;
       border: solid 1px $gray;
       overflow: auto;
-      // white-space: nowrap;
+      white-space: nowrap;
     }
     &__short {
       &-box {
@@ -46,6 +46,10 @@
     &__long {
       &-box {
         display: flex;
+      }
+      &--two {
+        width: 250px;
+        margin-right: 5px;
       }
       &-three {
         width: 165px;
@@ -70,13 +74,8 @@
     &__building {
       width: 325px;
     }
-    &__start_date {
-      width: 125px;
-      margin-right: 5px;
-      font-size: 14px;
-    }
     &__created_at, &__updated_at {
-      width: 185px;
+      width: 250px;
       margin-right: 5px;
       font-size: 14px;
     }
