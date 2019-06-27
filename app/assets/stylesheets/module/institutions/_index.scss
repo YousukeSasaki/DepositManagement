@@ -1,0 +1,57 @@
+.ins-index {
+  width: 100%;
+  margin: 40px 0;
+  .left {
+    border: solid 1px $black;
+    padding: 0 5px; 
+  }
+  .center {
+    border: solid 1px $black;
+    text-align: center;
+  }
+  &__table {
+    margin: 0 auto;
+    background-color: $cream;
+    &__col {
+      height: 30px;
+      border: solid 1px $black;
+      text-align: center;
+      &:hover {
+        opacity: 1!important;
+        cursor: default
+      }
+    }
+    &__item {
+      height: 50px;
+      &:hover {
+        @include link_hover_no_line;
+      }
+      &-id {
+        min-width: 50px;
+      }
+      &-image {
+        width: 70px;
+        border: none;
+        & .image {
+          width: 69px;
+          height: 69px;
+          background-size: cover;
+          display: block;
+        }
+      }
+      &-name {
+        min-width: 200px;
+      }
+      &-type {
+        width: 200px;
+      }
+      &-phone {
+        width: 100px;
+      }
+      &-address {
+        width: 320px;
+      }
+    }
+  }
+}
+  
