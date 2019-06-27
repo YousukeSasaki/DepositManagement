@@ -18,6 +18,16 @@ class InstitutionsController < ApplicationController
     end
   end
 
+  def update
+    if @institution.update(institution_params)
+      flash.now[:notice] = "正常に変更されました"
+      render :edit
+    else
+      flash.now[:alert] = '変更に失敗しました。必須項目を確認してください。'
+      render :edit
+    end
+  end
+
   private
 
   def set_institutions
