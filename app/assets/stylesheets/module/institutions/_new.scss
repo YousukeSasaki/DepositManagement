@@ -15,6 +15,10 @@
     border-radius: 5px;
     border: solid 1px $gray;
   }
+  select {
+    height: 25px;
+    line-height: 25px;
+  }
   & .required::after {
     content: '必須';
     @include require;
@@ -33,14 +37,14 @@
     }
     &__submit {
       display: block;
-      width: 80px;
+      width: 300px;
       height: 40px;
-      margin: 5px 5px 5px 20px;
+      margin-top: 20px;
       color: $white;
       text-align: center;
       line-height: 40px;
       background-color: $blue;
-      border: solid 1px $black;
+      border: solid 1px $black!important;
       border-radius: 10px;
       outline: none;
     }
