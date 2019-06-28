@@ -39,7 +39,13 @@ end
 # transactions#show
 crumb :transaction do |transaction|
   link "取引詳細", transaction_path(transaction)
-  parent :transaction_parent
+  parent :customer_transactions, transaction.customer
+end
+
+# transactions#edit
+crumb :edit_transactions do |transaction|
+  link "編集"
+  parent transaction
 end
 
 
