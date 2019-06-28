@@ -1,0 +1,50 @@
+- breadcrumb :transaction, @transaction
+= render "layouts/delete_modal", path: transaction_path
+
+.top-title 取引詳細
+.tra-show
+  .tra-show--left
+    .tra-show--left__short-box
+      .tra-show--left__short--two
+        %label.tra-show--left__label T-No.
+        .tra-show--left__field #{@transaction.id}
+      .tra-show--left__short--two
+        %label.tra-show--left__label C-No.
+        .tra-show--left__field #{c_id_change(@transaction)}
+    .tra-show--left__short-box
+      .tra-show--left__short--two
+        %label.tra-show--left__label 名前
+        .tra-show--left__field #{@customer.name}
+      .tra-show--left__short--two
+        %label.tra-show--left__label 日付
+        .tra-show--left__field #{@transaction.date.strftime('%Y年%m月%d日')}
+    .tra-show--left__short-box
+      .tra-show--left__subject
+        %label.tra-show--left__label 科目
+        .tra-show--left__field #{@transaction.subject.name}
+      .tra-show--left__amount
+        %label.tra-show--left__label 金額
+        .tra-show--left__field.right #{converting_to_jpy(@transaction.amount)}円
+    .tra-show--left__long-box
+      .tra-show--left__long--one
+        %label.tra-show--left__label 摘要
+        .tra-show--left__field #{@transaction.summary}
+    .tra-show--left__long-box
+      .tra-show--left__long--two
+        %label.tra-show--left__label 施設
+        .tra-show--left__field #{@transaction.institution.name}
+      .tra-show--left__long--two
+        %label.tra-show--left__label 最終更新者
+        .tra-show--left__field #{@transaction.user.name}
+    .tra-show--left__long-box
+      .tra-show--left__created_at
+        %label.tra-show--left__label 登録日
+        .tra-show--left__field #{datetime_jp(@transaction.created_at)}
+      .tra-show--left__updated_at
+        %label.tra-show--left__label 最終更新日
+        .tra-show--left__field #{datetime_jp(@transaction.updated_at)}
+    .tra-show--left__long-box
+      = link_to "編集", edit_transaction_path, class: "tra-show--left__btn edit"
+      = link_to "削除する", "", class: "tra-show--left__btn delete", id: "delete__modal--btn"
+  .tra-show--right
+    = image_tag "#{@customer.image.url}", class: "tra-show--right__image"
