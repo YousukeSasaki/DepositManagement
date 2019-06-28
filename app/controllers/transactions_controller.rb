@@ -1,8 +1,9 @@
 class TransactionsController < ApplicationController
   layout "main_application"
   before_action :set_transactions, only: :index
+  before_action :set_transaction, only: [:show, :edit]
   before_action :set_customers, only: [:index, :new_choice, :customer_choice]
-  before_action :set_customer, only: [:new, :show, :edit, :update, :destroy, :customer]
+  before_action :set_customer, only: [:new, :update, :destroy, :customer]
   before_action :set_customer_from_params, only: :create
   before_action :set_ts_number, only: :create
   before_action :set_balance_record, only: :create
@@ -24,6 +25,16 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def show
+    @customer = @transaction.customer
+  end
+
+  def edit
+    @customer = @transaction.customer
+    @subjects = Subject.all.where('ancestry IS NULL')
+    @institutions = Institution.all
+  end
+
   def customer
   end
 
@@ -31,6 +42,10 @@ class TransactionsController < ApplicationController
 
   def set_transactions
     @transactions = Transaction.all.order('id DESC')
+  end
+
+  def set_transaction
+    @transaction = Transaction.find(params[:id])
   end
 
   def set_customers
