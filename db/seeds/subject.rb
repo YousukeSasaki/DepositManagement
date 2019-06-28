@@ -2,7 +2,7 @@
  Subject.create(name: "振込預かり金", status: 0, number: 112)
  Subject.create(name: "借入金入金", status: 0, number: 121)
  Subject.create(name: "不明入金", status: 0, number: 199)
- Subject.create(name: "当事業所売上支出", status: 1, number: 511)
+ Subject.create(name: "当事業所利用料売上", status: 1, number: 511)
  Subject.create(name: "施設サービス利用料", status: 1, number: 521)
  Subject.create(name: "派遣サービス利用料", status: 1, number: 522)
  Subject.create(name: "介護用品費", status: 1, number: 531)
