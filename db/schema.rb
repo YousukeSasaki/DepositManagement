@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_11_146100) do
+ActiveRecord::Schema.define(version: 2019_06_28_041242) do
+
+  create_table "balances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "customer_id"
+    t.integer "balance", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_balances_on_customer_id"
+  end
 
   create_table "customer_institutions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "customer_id", null: false
@@ -108,7 +116,7 @@ ActiveRecord::Schema.define(version: 2019_06_11_146100) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "rese_password_sent_at"
+    t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -116,6 +124,7 @@ ActiveRecord::Schema.define(version: 2019_06_11_146100) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "balances", "customers"
   add_foreign_key "customer_institutions", "customers"
   add_foreign_key "customer_institutions", "institutions"
   add_foreign_key "customers", "prefectures"
