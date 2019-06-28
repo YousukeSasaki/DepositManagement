@@ -1,3 +1,16 @@
-
+- breadcrumb :transactions
 
 .top-title 一覧表示
+.tra-index
+  %table.tra-index__table
+    %tr.tra-index__table__col
+      %th.tra-index__table__col-t_id.center T-No.
+      %th.tra-index__table__col-c_id.center C-No.
+      %th.tra-index__table__col-date.center 日付
+      %th.tra-index__table__col-customer.center 利用者
+      %th.tra-index__table__col-subject.center 科目
+      %th.tra-index__table__col-amount.center 金額
+      %th.tra-index__table__col-institution.center 施設
+      %th.tra-index__table__col-summary.center 摘要
+
+    = render @transactions

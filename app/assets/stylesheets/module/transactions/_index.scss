@@ -1,0 +1,61 @@
+.tra-index {
+  width: 100%;
+  margin: 40px 0;
+  .left {
+    border: solid 1px $black;
+    padding: 0 5px; 
+  }
+  .center {
+    border: solid 1px $black;
+    text-align: center;
+  }
+  .right {
+    border: solid 1px $black;
+    padding: 0 5px; 
+    text-align: right;
+  }
+  &__table {
+    margin: 0 auto;
+    background-color: $cream;
+    &__col {
+      height: 30px;
+      border: solid 1px $black;
+      text-align: center;
+      &:hover {
+        opacity: 1!important;
+        cursor: default
+      }
+    }
+    &__item {
+      height: 50px;
+      &:hover {
+        @include link_hover_no_line;
+      }
+      &-t_id {
+        min-width: 50px;
+      }
+      &-c_id {
+        min-width: 75px;
+      }
+      &-date {
+        width: 100px;
+      }
+      &-customer {
+        width: 120px;
+      }
+      &-subject {
+        min-width: 200px;
+      }
+      &-amount {
+        min-width: 100px;
+      }
+      &-institution {
+        width: 150px;
+      }
+      &-summary {
+        width: 220px;
+      }
+    }
+  }
+}
+  
