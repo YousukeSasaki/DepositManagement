@@ -2,6 +2,7 @@ class Customer < ApplicationRecord
   has_many :institutions, through: :customer_institutions
   has_many :customer_institutions
   has_many :transactions
+  has_one :balance
   belongs_to :prefecture
 
   validates :name, length: {in: 1..10}, presence: true
