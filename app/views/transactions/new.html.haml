@@ -33,7 +33,6 @@
         .tra-new--left__amount--number
           %p  ¥
       .tra-new--left__one
-        // institutionテーブルから科目同様非同期＋プルダウン実装
         = f.label :institution, "施設名", class: "tra-new--left__label"
         = f.collection_select :institution_id, @institutions, :id, :name, {prompt: "---"}, {class: "tra-new--left__field"}
       .tra-new--left__one

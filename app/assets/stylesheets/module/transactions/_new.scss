@@ -74,11 +74,14 @@
       }
       &--number {
         width: 190px;
-        line-height: 56px;
+        height: 40px;
+        line-height: 40px;
+        margin: auto 0;
         & p {
           font-size: 27px;
           font-weight: bold;
           text-align: right;
+          border-bottom: solid 1px $black;
         }
       }
     }
@@ -93,6 +96,9 @@
       border: solid 1px $black!important;
       border-radius: 10px;
       outline: none;
+      &:hover {
+        @include link_hover_no_line;
+      }
     }
   }
   &--right {

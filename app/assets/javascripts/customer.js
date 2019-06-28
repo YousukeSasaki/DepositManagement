@@ -56,4 +56,23 @@ $(function() {
         $(".delete__modal").addClass("hidden");
     });
 
+
+    var input = ".cus-new--left__amount--input > input";
+
+    $(document).on("keyup", input, function(){
+        var amount = $(input).val();
+        var str = String(amount); 
+        var amount_str = str.replace(/(\d)(?=(\d\d\d)+$)/g, '$1,');
+        $(".cus-new--left__amount--number > p").text("¥ " + amount_str);
+    });
+
+    $(document).on('input', '#customer_amount', function() {
+        var value = this.value;
+        var length = this.value.length;
+        var maxlength = $(this).attr('maxlength');
+        
+        if (length > maxlength) {
+            this.value = value.slice(0, maxlength);
+        }
+    });
 });
