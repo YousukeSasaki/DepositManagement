@@ -47,6 +47,9 @@
       border: solid 1px $black!important;
       border-radius: 10px;
       outline: none;
+      &:hover {
+        @include link_hover_no_line;
+      }
     }
   }
   &--right {
