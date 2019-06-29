@@ -4,12 +4,6 @@ $(function() {
         console.log("customer.js OK");
     });
 
-    // 一覧テーブルのリンク
-    $(document).on('click', 'tr[data-link]', function(e) {
-        e.preventDefault
-        window.location = $(this).data('link')
-    });
-
     // 画像選択プレビュー
     $(document).on('change', '.cus-new--right__image input[type="file"]', function(e) {
         e.preventDefault
@@ -42,27 +36,11 @@ $(function() {
         reader.readAsDataURL(file);
     });
 
-    // 利用者情報削除モーダルウィンドウ表示
-    $(document).on('click', '#delete__modal--btn', function(e) {
-        e.preventDefault();
-        $(".mask").removeClass("hidden");
-        $(".delete__modal").removeClass("hidden");
-        $('html,body').animate( {scrollTop:0}, 1);
-    });
-
-    // モーダルウィンドウを閉じる
-    $(document).on('click', '.mask', function() {
-        $(".mask").addClass("hidden");
-        $(".delete__modal").addClass("hidden");
-    });
-
-
-    var input = ".cus-new--left__amount--input > input";
-
-    $(document).on("keyup", input, function(){
-        var amount = $(input).val();
-        var str = String(amount); 
-        var amount_str = str.replace(/(\d)(?=(\d\d\d)+$)/g, '$1,');
+    $(document).on('keyup', '.cus-new--left__amount--input > input', function(){
+        var input = ".cus-new--left__amount--input > input";
+            amount = $(input).val();
+            str = String(amount); 
+            amount_str = str.replace(/(\d)(?=(\d\d\d)+$)/g, '$1,');
         $(".cus-new--left__amount--number > p").text("¥ " + amount_str);
     });
 
