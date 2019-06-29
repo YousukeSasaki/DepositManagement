@@ -38,7 +38,7 @@
       .tra-new--left__one
         = f.label :summary, "摘要", class: "tra-new--left__label"
         = f.text_field :summary, class: "tra-new--left__field"
-      = f.submit "登録", class: "tra-new--left__submit"
+      = f.submit "編集", class: "tra-new--left__submit"
     .tra-new--right
       .tra-new--right__preview
         = image_tag "#{@customer.image.url}"
