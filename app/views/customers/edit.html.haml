@@ -1,4 +1,4 @@
-- breadcrumb :customer, @customer
+- breadcrumb :edit_customer, @customer
 
 .top-title 編集（#{@customer.name}）
 .cus-new
@@ -55,17 +55,16 @@
       .cus-new--left__building
         = f.label :building, "建物名", class: "cus-new--left__label"
         = f.text_field :building, class: "cus-new--left__field"
-      .cus-new--left__box
-        .cus-new--left__start_date
-          = f.label :start_date, "利用開始日", class: "cus-new--left__label"
-          .cus-new--left__start_date--select
-            = raw sprintf(f.date_select( :start_date, 
-              prompt: "--",
-              use_two_digit_numbers: true,
-              start_year: Time.now.year,
-              end_year: 1900,
-              date_separator: '%s'),
-              '年 ', '月 ') + '日'
+      .cus-new--left__start_date
+        = f.label :start_date, "利用開始日", class: "cus-new--left__label"
+        .cus-new--left__start_date--select
+          = raw sprintf(f.date_select( :start_date, 
+            prompt: "--",
+            use_two_digit_numbers: true,
+            start_year: Time.now.year,
+            end_year: 1900,
+            date_separator: '%s'),
+            '年 ', '月 ') + '日'
         = f.submit "登録", class: "cus-new--left__submit"
     .cus-new--right
       %span.cus-new--right-title

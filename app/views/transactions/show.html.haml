@@ -28,11 +28,15 @@
     .tra-show--left__long-box
       .tra-show--left__long--one
         %label.tra-show--left__label 摘要
-        .tra-show--left__field #{@transaction.summary}
+        .tra-show--left__field
+          - if @transaction.summary.present?
+            #{@transaction.summary}
     .tra-show--left__long-box
       .tra-show--left__long--two
         %label.tra-show--left__label 施設
-        .tra-show--left__field #{@transaction.institution.name}
+        .tra-show--left__field
+          - if @transaction.institution.present?
+            #{@transaction.institution.name}
       .tra-show--left__long--two
         %label.tra-show--left__label 最終更新者
         .tra-show--left__field #{@transaction.user.name}
