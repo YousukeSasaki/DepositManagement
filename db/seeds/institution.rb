@@ -1,2 +1,3 @@
-Institution.create(name: "AAデイサービス", kana: "エーデイケア", phone_number_one: "0441112222", phone_number_two: "0451111222", postal_code: "5671234", prefecture_id: 9, city: "BBBB市CCCC町DDDD", address: "34-56-12", building: "", institution_type_id: 10)
-Institution.create(name: "MM病院", kana: "エムエムビョウイン", phone_number_one: "0991112222", phone_number_two: "0881111222", postal_code: "9972121", prefecture_id: 40, city: "NNNNN市OOOOO町PPPPP", address: "21-34-78", building: "QQQQビル3階", institution_type_id: 3)
+Institution.create(name: "大和デイサービス", kana: "ダイワデイサービス", phone_number_one: "0441112222", phone_number_two: "0451111222", postal_code: "5671234", prefecture_id: 22, city: "羽島市正木町新井", address: "34-56-12", building: "竹本ビル1階", institution_type_id: 10)
+Institution.create(name: "酒井総合病院", kana: "サカイソウゴウビョウイン", phone_number_one: "0991112222", phone_number_two: "0881111222", postal_code: "9972121", prefecture_id: 23, city: "牧之原市細江", address: "21-34-78", institution_type_id: 9)
+Institution.create(name: "訪問看護ステーション日野", kana: "ホウモンカンゴステーションヒノ", phone_number_one: "0412341234", postal_code: "5656565", prefecture_id: 21, city: "長野市川中島町若葉", address: "1-7-5", institution_type_id: 14)
