@@ -2,6 +2,12 @@
 
 .top-title 取引一覧（#{@customer.name}）
 .tra-index
+  .tra-index__balance
+    .tra-index__balance-left
+      %i.fas.fa-wallet
+      残高
+    .tra-index__balance-right
+      #{converting_to_jpy(@customer.balance.balance)}円
   %table.tra-index__table
     %tr.tra-index__table__col
       %th.tra-index__table__col-t_id.center T-No.
