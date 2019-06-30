@@ -1,6 +1,6 @@
 .sidebar {
   float: left;
-  min-width: 120px;
+  min-width: 124px;
   height: 100vh;
   color: #0053A6;
   background-color: #E4EEF6;
@@ -14,18 +14,44 @@
     }
   }
   &__title {
-    padding: 20px 0;
+    padding: 30px 0 10px;
     font-size: 25px;
-    text-align: center;
+    & img {
+      display: block;
+      width: 110px;
+      margin: 0 auto;
+      &:hover {
+        @include link_hover;
+      }
+    }
   }
   &__user {
-    padding-bottom: 25px;
+    padding: 10px 0;
     text-align: center;
   }
   &__menu {
     &__box {
-      padding: 10px 0 10px 20px;
+      padding: 10px;
       border-top: solid 0.2px #97c1dc;
+      &__list {
+        padding-left: 23px;
+      }
+      & .fa-file-alt {
+        font-size: 16px;
+        padding: 0 5px 0 2px;
+      }
+      & .fa-walking {
+        font-size: 18px;
+        padding: 0 5px 0 2px;
+      }
+      & .fa-building {
+        font-size: 14px;
+        padding: 0 5px 0 1px;
+      }
+      & .fa-clipboard-list {
+        font-size: 16px;
+        padding: 0 5px 0 2px;
+      }
     }
   }
 }
