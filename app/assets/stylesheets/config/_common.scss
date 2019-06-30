@@ -19,10 +19,19 @@ html body{
 }
 
 .wrapper {
-  height: 100vh;
-  width: calc(100% - 121px);
+  height: 100%;
+  width: calc(100% - 125px);
   float: left;
   overflow: auto;
+}
+
+.top-logo {
+  height: 150px;
+  padding-top: 50px;
+  text-align: center;
+  & img {
+    height: 80px;
+  }
 }
 
 .top-title {
