@@ -20,15 +20,6 @@ ActiveRecord::Schema.define(version: 2019_06_28_041242) do
     t.index ["customer_id"], name: "index_balances_on_customer_id"
   end
 
-  create_table "customer_institutions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "customer_id", null: false
-    t.bigint "institution_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["customer_id"], name: "index_customer_institutions_on_customer_id"
-    t.index ["institution_id"], name: "index_customer_institutions_on_institution_id"
-  end
-
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "kana", null: false
@@ -125,8 +116,6 @@ ActiveRecord::Schema.define(version: 2019_06_28_041242) do
   end
 
   add_foreign_key "balances", "customers"
-  add_foreign_key "customer_institutions", "customers"
-  add_foreign_key "customer_institutions", "institutions"
   add_foreign_key "customers", "prefectures"
   add_foreign_key "institutions", "institution_types"
   add_foreign_key "institutions", "prefectures"
