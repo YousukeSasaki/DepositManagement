@@ -1,11 +1,16 @@
 .sidebar
   .sidebar__title
-    デポマネ
+    = link_to root_path do
+      = image_tag "logo.png"
   .sidebar__user
-    NAMEさん
+    = "#{current_user.name}"
+    %br
+    = "さん"
   .sidebar__menu
     .sidebar__menu__box#transactions
-      = link_to "取引情報", transactions_path
+      = link_to transactions_path do
+        %i.fas.fa-file-alt
+        取引情報
       %ul.sidebar__menu__box__list
         %li.sidebar__menu__box__list-child
           = link_to "取引登録", new_choice_transactions_path
@@ -14,26 +19,34 @@
         %li.sidebar__menu__box__list-child
           = link_to "利用者別", customer_choice_transactions_path
     .sidebar__menu__box#customers
-      = link_to "利用者情報", customers_path
+      = link_to customers_path do
+        %i.fas.fa-walking
+        利用者情報
       %ul.sidebar__menu__box__list
         %li.sidebar__menu__box__list-child
           = link_to "利用者登録", new_customer_path
         %li.sidebar__menu__box__list-child
           = link_to "一覧表示", customers_path
     .sidebar__menu__box#institutions
-      = link_to "施設情報", institutions_path
+      = link_to institutions_path do
+        %i.fas.fa-building
+        施設情報
       %ul.sidebar__menu__box__list
         %li.sidebar__menu__box__list-child
           = link_to "施設登録", new_institution_path
         %li.sidebar__menu__box__list-child
           = link_to "一覧表示", institutions_path
     .sidebar__menu__box#subjects
-      = link_to "科目設定", "#"
+      = link_to root_path do
+        %i.fas.fa-clipboard-list
+        科目設定
       %ul.sidebar__menu__box__list
         %li.sidebar__menu__box__list-child
         %li.sidebar__menu__box__list-child
     .sidebar__menu__box#users
-      = link_to "職員情報", "#"
+      = link_to edit_user_registration_path do
+        %i.fas.fa-user-cog
+        職員情報
       %ul.sidebar__menu__box__list
         %li.sidebar__menu__box__list-child
         %li.sidebar__menu__box__list-child
