@@ -1,0 +1,53 @@
+.mask {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.hidden {
+  display: none;
+}
+.delete__modal {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  -webkit-transform: translate(-50%, -50%); /* Safari用 */
+  transform: translate(-50%, -50%);
+  width: 40vw;
+  padding: 0 0 30px 0;
+  background: $white;
+  z-index: 100;
+  &__content {
+    padding: 0 20%;
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      padding: 10px 0;
+      font-weight: bold;
+      border-bottom: 2px solid black;
+    }
+    &__info {
+      padding-top: 30px;
+      text-align: center;
+    }
+  }
+  &--btn {
+    display: block;
+    height: 60px;
+    width: 30%;
+    line-height: 60px;
+    margin: 20px auto 0;
+    background-color: $red;
+    color: $white!important;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    // &:hover {
+    //   @include a-no-change-hover;
+    // }
+  }
+}
