@@ -1,6 +1,5 @@
 class Customer < ApplicationRecord
-  has_many :institutions, through: :customer_institutions
-  has_many :customer_institutions
+  has_many :institutions
   has_many :transactions
   has_one :balance
   accepts_nested_attributes_for :balance
