@@ -16,6 +16,7 @@
       height: 30px;
       border: solid 1px $black;
       text-align: center;
+      background-color: $litegray;
       &:hover {
         opacity: 1!important;
         cursor: default
@@ -27,7 +28,7 @@
         @include link_hover_no_line;
       }
       &-id {
-        min-width: 50px;
+        width: 50px;
       }
       &-image {
         width: 70px;
@@ -40,10 +41,10 @@
         }
       }
       &-name {
-        width: 125px;
+        width: 100px;
       }
       &-kana {
-        width: 190px;
+        width: 150px;
       }
       &-sex {
         width: 40px;
