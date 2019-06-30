@@ -14,6 +14,22 @@
     padding: 0 5px; 
     text-align: right;
   }
+  &__balance {
+    display: flex;
+    width: 225px;
+    margin: 0 auto 20px;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: $cream;
+    &-left {
+      display: inline;
+    }
+    &-right {
+      width: 135px;
+      text-align: right;
+    }
+  }
   &__table {
     margin: 0 auto;
     background-color: $cream;
@@ -21,6 +37,7 @@
       height: 30px;
       border: solid 1px $black;
       text-align: center;
+      background-color: $litegray;
       &:hover {
         opacity: 1!important;
         cursor: default
@@ -32,28 +49,28 @@
         @include link_hover_no_line;
       }
       &-t_id {
-        min-width: 50px;
+        width: 45px;
       }
       &-c_id {
-        min-width: 75px;
+        width: 50px;
       }
       &-date {
         width: 100px;
       }
       &-customer {
-        width: 120px;
+        width: 80px;
       }
       &-subject {
-        min-width: 200px;
-      }
-      &-amount {
-        min-width: 120px;
+        width: 180px;
       }
       &-institution {
-        width: 200px;
+        width: 150px;
       }
       &-summary {
-        width: 220px;
+        width: 150px;
+      }
+      &-amount {
+        width: 110px;
       }
     }
   }
