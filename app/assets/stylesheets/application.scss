@@ -5,8 +5,11 @@
 @import "module/sidebar";
 @import "module/breadcrumb";
 @import "module/flash";
+@import "module/delete_modal";
 
 
+@import "module/users/sessions/new";
+@import "module/users/registrations/new";
 
 @import "module/transactions/index";
 @import "module/transactions/new";
@@ -15,7 +18,6 @@
 @import "module/customers/index";
 @import "module/customers/new";
 @import "module/customers/show";
-@import "module/customers/delete_modal";
 
 @import "module/institutions/index";
 @import "module/institutions/new";

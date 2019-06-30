@@ -20,6 +20,7 @@
     width: 510px;
     &__label {
       text-decoration: underline;
+      font-weight: bold;
     }
     &__field {
       margin-bottom: 10px;
@@ -71,7 +72,7 @@
       width: 325px;
     }
     &__start_date {
-      width: 125px;
+      min-width: 125px;
       margin-right: 5px;
       font-size: 14px;
     }

@@ -1,0 +1,19 @@
+.top-logo
+  = image_tag "logo.png"
+.top-title ログインページ
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .login-form
+    .field
+      = f.label :email, "メールアドレス"
+      %span.form-require
+      = f.email_field :email, class: "field__input", autocomplete: "email", placeholder: "メールアドレス", value: "test@user.com"
+    .field
+      = f.label :password, "パスワード"
+      %span.form-require
+      = f.password_field :password, class: "field__input", autocomplete: "current-password", placeholder: "パスワード", value: "12345678"
+      %p テストユーザーはそのままログインできます
+    .submit
+      = f.submit "ログイン", class: "submit__btn"
+    .submit
+      = link_to new_user_registration_path do
+        %btn.submit__btn.registration 新規登録

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   root 'users#index'
   resources 'users', only: :show
-
+  
   resource 'transactions', path: 'transactions/c_:customer_id', only: :new
   resource 'transactions', action: 'customer', path: 'transactions/c_:customer_id', only: :show, as: 'customer_transactions'
   resources 'transactions', except: :new do

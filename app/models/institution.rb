@@ -1,6 +1,5 @@
 class Institution < ApplicationRecord
-  has_many :customers, through: :customer_institutions
-  has_many :customer_institutions
+  has_many :customers
   has_many :transactions
   belongs_to :institution_type
   belongs_to :prefecture

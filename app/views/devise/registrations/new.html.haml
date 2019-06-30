@@ -1,0 +1,29 @@
+.top-logo
+  = image_tag "logo.png"
+.top-title 新規登録
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  .signup-form
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      = f.label :name, "名前"
+      %span.form-require
+      = f.text_field :name, class: "field__input", autocomplete: "name", placeholder: "例）デポマネ太郎"
+    .field
+      = f.label :kana, "フリガナ"
+      %span.form-require
+      = f.text_field :kana, class: "field__input", autocomplete: "kana", placeholder: "例）デポマネタロウ"
+    .field
+      = f.label :email, "メールアドレス"
+      %span.form-require
+      = f.email_field :email, class: "field__input", autocomplete: "email", placeholder: "PC・携帯どちらでも可" 
+    .field
+      = f.label :password, "パスワード"
+      %span.form-require
+      = f.password_field :password, class: "field__input", autocomplete: "email", placeholder: "6文字以上"
+    .field
+      = f.label :password_confirmation, "パスワード（確認）"
+      %span.form-require
+      = f.password_field :password_confirmation, class: "field__input", autocomplete: "password", placeholder: "6文字以上"
+    .submit
+      = f.submit "登録", class: "submit__btn"
+
