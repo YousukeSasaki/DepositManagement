@@ -1,0 +1,10 @@
+%tr{"data-link": "#{customer_path(customer)}", class: "user-index--box__customers__table__item"}
+  %td.user-index--box__customers__table__item-id.center #{customer.id}
+  %td.user-index--box__customers__table__item-image.center
+    - if customer.image.present?
+      = image_tag "#{customer.image.url}", class: "image"
+    - else
+      = image_tag "default.jpg", class: "image"
+  %td.user-index--box__customers__table__item-name.left #{customer.name}
+  %td.user-index--box__customers__table__item-sex.center #{sex_change(customer.sex)}
+  %td.user-index--box__customers__table__item-birthday.center #{customer.birthday}
