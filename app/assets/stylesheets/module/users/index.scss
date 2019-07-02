@@ -1,0 +1,194 @@
+.user-index {
+  width: 980px;
+  height: 1000px;
+  margin: 30px auto;
+  .title {
+    font-size: 20px;
+    margin: 5px auto 15px;
+    text-align: center;
+    font-weight: bold;
+    color: $darkblue;
+    & span {
+      background: linear-gradient(transparent 50%, yellow 50%);
+    }
+  }
+  .left {
+    border: solid 1px $black;
+    padding: 0 5px; 
+  }
+  .center {
+    border: solid 1px $black;
+    text-align: center;
+  }
+  .right {
+    border: solid 1px $black;
+    padding: 0 5px; 
+    text-align: right;
+  }
+  &__message {
+    margin: 20px 0 5px;
+    padding: 5px;
+    font-size: 24px;
+    color: $darkblue;
+    text-align: center;
+    border: solid 2px $gray;
+    border-radius: 10px;
+    background-color: $white;
+  }
+  &__transactions {
+    margin-bottom: 5px;
+    padding: 10px 0 20px;
+    border: solid 2px $gray;
+    border-radius: 10px;
+    background-color: $white;
+    &__table {
+      margin: 0 auto;
+      background-color: $cream;
+      &__col {
+        height: 30px;
+        border: solid 1px $black;
+        text-align: center;
+        background-color: $litegray;
+        &:hover {
+          opacity: 1!important;
+          cursor: default
+        }
+      }
+      &__item {
+        height: 50px;
+        &:hover {
+          @include link_hover_no_line;
+        }
+        &-id {
+          width: 50px;
+        }
+        &-date {
+          width: 100px;
+        }
+        &-customer {
+          width: 80px;
+        }
+        &-subject {
+          width: 180px;
+        }
+        &-institution {
+          width: 150px;
+        }
+        &-summary {
+          width: 150px;
+        }
+        &-amount {
+          width: 110px;
+        }
+      }
+    }
+  }
+  &--box {
+    display: flex;
+    &__customers {
+      width: 405px;
+      margin-right: 5px;
+      padding: 10px 0 20px;
+      border: solid 2px $gray;
+      border-radius: 10px;
+      background-color: $white;
+      &__table {
+        margin: 0 auto;
+        background-color: $cream;
+        &__col {
+          height: 30px;
+          border: solid 1px $black;
+          text-align: center;
+          background-color: $litegray;
+          &:hover {
+            opacity: 1!important;
+            cursor: default
+          }
+        }
+        &__item {
+          height: 50px;
+          &:hover {
+            @include link_hover_no_line;
+          }
+          &-id {
+            width: 50px;
+          }
+          &-image {
+            width: 70px;
+            border: none;
+            & .image {
+              width: 69px;
+              height: 69px;
+              display: block;
+            }
+          }
+          &-name {
+            width: 100px;
+          }
+          &-kana {
+            width: 150px;
+          }
+          &-sex {
+            width: 40px;
+          }
+          &-birthday {
+            width: 100px;
+          }
+        }
+      }
+    }
+    &__institutions {
+      width: 565px;
+      margin-left: 5px;
+      padding: 10px 0 20px;
+      border: solid 2px $gray;
+      border-radius: 10px;
+      background-color: $white;
+      &__table {
+        margin: 0 auto;
+        background-color: $cream;
+        &__col {
+          height: 30px;
+          border: solid 1px $black;
+          text-align: center;
+          background-color: $litegray;
+          &:hover {
+            opacity: 1!important;
+            cursor: default
+          }
+        }
+        &__item {
+          height: 50px;
+          &:hover {
+            @include link_hover_no_line;
+          }
+          &-id {
+            width: 50px;
+          }
+          &-image {
+            width: 70px;
+            border: none;
+            & .image {
+              width: 69px;
+              height: 69px;
+              display: block;
+            }
+          }
+          &-name {
+            width: 200px;
+          }
+          &-type {
+            width: 200px;
+          }
+          &-phone {
+            width: 100px;
+          }
+          &-address {
+            width: 320px;
+          }
+        }
+      }
+    }
+  }
+}
+  
