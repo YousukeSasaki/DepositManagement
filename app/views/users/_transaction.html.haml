@@ -1,0 +1,15 @@
+%tr{"data-link": "#{transaction_path(transaction)}", class: "user-index__transactions__table__item"}
+  %td.user-index__transactions__table__item-id.center #{transaction.id}
+  %td.user-index__transactions__table__item-date.center #{transaction.date}
+  %td.user-index__transactions__table__item-customer.center #{transaction.customer.name}
+  %td.user-index__transactions__table__item-subject.center
+    - if transaction.subject.present?
+      #{transaction.subject.name}
+  %td.user-index__transactions__table__item-institution.center
+    - if transaction.institution.present?
+      #{transaction.institution.name}
+  %td.user-index__transactions__table__item-summary.left
+    - if transaction.summary.present?
+      #{transaction.summary}
+  %td.user-index__transactions__table__item-amount.right
+    #{converting_to_jpy(transaction.amount)}円
