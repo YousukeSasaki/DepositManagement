@@ -1,123 +1,163 @@
 // transactions/edit.html.hamlも共通
-
-.tra-new {
-  width: 550px;
-  padding: 40px 60px;
-  margin: 40px auto;
-  border: solid 1px black;
-  background-color: $cream;
-  form {
-    display: flex;
-    width: 100%;
-  }
-  input {
-    height: 25px;
-    line-height: 25px;
-    padding: 0 5px;
-    border-radius: 5px;
-    border: solid 1px $gray;
-  }
-  select {
-    height: 25px;
-    line-height: 25px;
-  }
-  .hidden {
-    display: none;
-  }
-  & .required::after {
-    content: '必須';
-    @include require;
-    background-color: $red;
-  }
-  & .required-gray::after {
-    content: '任意';
-    @include require;
-    background-color: $gray;
-  }
-  &--left {
-    width: 300px;
-    &__field{
-      width: 300px;
+.hidden {
+  display: none;
+}
+.tra-box {
+  display: flex;
+  width: 800px;
+  margin: 40px auto 0;
+  .subject-list {
+    margin-right: 5px;
+    &__table {
+      background-color: $cream;
+      &__col {
+        height: 30px;
+        border: solid 1px $black;
+        text-align: center;
+        background-color: $litegray;
+        &-number {
+          padding: 0 5px;
+        }
+      }
+      &__item {
+        height: 25px;
+        &-name {
+          padding: 0 5px;
+        }
+      }
     }
-    &__one {
-      margin-bottom: 10px;
-    }
-    &__box {
+  }
+  .left {
+    border: solid 1px $black;
+    padding: 0 5px; 
+  }
+  .center {
+    border: solid 1px $black;
+    text-align: center;
+  }
+  .right {
+    border: solid 1px $black;
+    padding: 0 5px; 
+    text-align: right;
+  }
+  .tra-new {
+    width: 550px;
+    padding: 40px 60px;
+    margin-bottom: 100px;
+    border: solid 1px black;
+    background-color: $cream;
+    border: solid 2px $gray;
+    border-radius: 10px;
+    form {
       display: flex;
-      margin-bottom: 10px;
+      width: 100%;
     }
-    &__subject {
-      &-number {
-        width: 100px;
-        margin-right: 10px;
-        & input {
-          width: 100%;
-          height: 25px;
-          text-align: right;
-        }
-      }
-      &-menu {
-        width: 190px;
-        & select {
-          width: 100%;
-        }
-      }
+    input {
+      height: 25px;
+      line-height: 25px;
+      padding: 0 5px;
+      border-radius: 5px;
+      border: solid 1px $gray;
     }
-    &__amount {
-      &--input {
-        width: 100px;
-        margin-right: 10px;
-        & input {
-          width: 100%;
-          text-align: right;
-        }
-      }
-      &--number {
-        width: 190px;
-        height: 40px;
-        line-height: 40px;
-        margin: auto 0;
-        & p {
-          font-size: 27px;
-          font-weight: bold;
-          text-align: right;
-          border-bottom: solid 1px $black;
-        }
-      }
+    select {
+      height: 25px;
+      line-height: 25px;
     }
-    &__submit {
-      display: block;
+    & .required::after {
+      content: '必須';
+      @include require;
+      background-color: $red;
+    }
+    & .required-gray::after {
+      content: '任意';
+      @include require;
+      background-color: $gray;
+    }
+    &--left {
       width: 300px;
-      height: 40px!important;
-      margin-top: 20px;
-      color: $white;
-      font-weight: bold;
-      text-align: center;
-      background-color: $blue;
-      border: solid 1px $black!important;
-      border-radius: 10px;
-      outline: none;
-      &:hover {
-        @include link_hover_no_line;
+      &__field{
+        width: 300px;
+      }
+      &__one {
+        margin-bottom: 10px;
+      }
+      &__box {
+        display: flex;
+        margin-bottom: 10px;
+      }
+      &__subject {
+        &-number {
+          width: 100px;
+          margin-right: 10px;
+          & input {
+            width: 100%;
+            height: 25px;
+            text-align: right;
+          }
+        }
+        &-menu {
+          width: 190px;
+          & select {
+            width: 100%;
+          }
+        }
+      }
+      &__amount {
+        &--input {
+          width: 100px;
+          margin-right: 10px;
+          & input {
+            width: 100%;
+            text-align: right;
+          }
+        }
+        &--number {
+          width: 190px;
+          height: 40px;
+          line-height: 40px;
+          margin: auto 0;
+          & p {
+            font-size: 27px;
+            font-weight: bold;
+            text-align: right;
+            border-bottom: solid 1px $black;
+          }
+        }
+      }
+      &__submit {
+        display: block;
+        width: 300px;
+        height: 40px!important;
+        margin-top: 20px;
+        color: $white;
+        font-weight: bold;
+        text-align: center;
+        background-color: $blue;
+        border: solid 1px $black!important;
+        border-radius: 10px;
+        outline: none;
+        &:hover {
+          @include link_hover_no_line;
+        }
       }
     }
-  }
-  &--right {
-    position: relative;
-    width: 100px;
-    height: 124px;
-    margin-left: auto;
-    &__preview {
-      position: absolute;
-      top: 24px;
+    &--right {
+      position: relative;
       width: 100px;
-      height: 100px;
-      border: solid 1px $black;
-      border-radius: 3px;
-      & img {
-        width: 98px;
-        height: 98px;
-        object-fit: cover;
+      height: 124px;
+      margin-left: auto;
+      &__preview {
+        position: absolute;
+        top: 24px;
+        width: 100px;
+        height: 100px;
+        border: solid 1px $black;
+        border-radius: 3px;
+        & img {
+          width: 98px;
+          height: 98px;
+          object-fit: cover;
+        }
       }
     }
   }
