@@ -1,0 +1,45 @@
+.top-title
+  %span トップページ
+.user-index
+  .user-index__message
+    こんにちは
+    %i.fas.fa-user
+    #{current_user.name}さん
+  .user-index__transactions
+    .title
+      %span 取引新着表示
+    %table.user-index__transactions__table
+      %tr.user-index__transactions__table__col
+        %th.user-index__transactions__table__col-id.center No.
+        %th.user-index__transactions__table__col-date.center 日付
+        %th.user-index__transactions__table__col-customer.center 利用者
+        %th.user-index__transactions__table__col-subject.center 科目
+        %th.user-index__transactions__table__col-institution.center 施設
+        %th.user-index__transactions__table__col-summary.center 摘要
+        %th.user-index__transactions__table__col-amount.center 金額
+
+      = render partial: "transaction", collection: @transactions
+  .user-index--box
+    .user-index--box__customers
+      .title
+        %span 利用者様新着表示
+      %table.user-index--box__customers__table
+        %tr.user-index--box__customers__table__col
+          %th.user-index--box__customers__table__col-id.center No.
+          %th.user-index--box__customers__table__col-image.center 画像
+          %th.user-index--box__customers__table__col-name.center 氏名
+          %th.user-index--box__customers__table__col-sex.center 性別
+          %th.user-index--box__customers__table__col-birthday.center 生年月日
+
+        = render partial: "customer", collection: @customers
+    .user-index--box__institutions
+      .title
+        %span 施設新着表示
+      %table.user-index--box__institutions__table
+        %tr.user-index--box__institutions__table__col
+          %th.user-index--box__institutions__table__col-id.center No.
+          %th.user-index--box__institutions__table__col-image.center 画像
+          %th.user-index--box__institutions__table__col-name.center 名称
+          %th.user-index--box__institutions__table__col-type.center 種別
+
+        = render partial: "institution", collection: @institutions

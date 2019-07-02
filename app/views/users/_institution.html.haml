@@ -1,0 +1,9 @@
+%tr{"data-link": "#{institution_path(institution)}", class: "user-index--box__institutions__table__item"}
+  %td.user-index--box__institutions__table__item-id.center #{institution.id}
+  %td.user-index--box__institutions__table__item-image.center
+    - if institution.image.present?
+      = image_tag "#{institution.image.url}", class: "image"
+    - else
+      = image_tag "default.jpg", class: "image"
+  %td.user-index--box__institutions__table__item-name.left #{institution.name}
+  %td.user-index--box__institutions__table__item-type.left #{institution.institution_type.name}

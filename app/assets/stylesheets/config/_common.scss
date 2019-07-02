@@ -35,12 +35,20 @@ html body{
 }
 
 .top-title {
+  display: inline-block;
   width: 100%;
   height: 85px;
   padding-top: 40px;
   font-size: 30px;
+  color: $white;
   font-weight: bold;
   text-align: center;
+  span {
+    padding: 5px 15px;
+    background-color: rgb(2,190,204);
+    border: ridge 2px $litegray;
+    border-radius: 5px;
+  }
 }
 
 @mixin link_hover(){

@@ -105,11 +105,11 @@ class TransactionsController < ApplicationController
   end
 
   def create_transaction_params
-    params.require(:transaction).permit(:date, :customer_id, :subject_id, :amount, :institution_id, :summary).merge(ts_number: @ts_number, user_id: 1)
+    params.require(:transaction).permit(:date, :customer_id, :subject_id, :amount, :institution_id, :summary).merge(ts_number: @ts_number, user_id: current_user.id)
   end
 
   def update_transaction_params
-    params.require(:transaction).permit(:date, :customer_id, :subject_id, :amount, :institution_id, :summary).merge(user_id: 1)
+    params.require(:transaction).permit(:date, :customer_id, :subject_id, :amount, :institution_id, :summary).merge(user_id: current_user.id)
   end
 
   def balance_calc_new

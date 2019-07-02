@@ -1,7 +1,8 @@
 - breadcrumb :institution, @institution
 = render "layouts/delete_modal", path: institution_path
 
-.top-title 施設詳細（#{@institution.name}）
+.top-title
+  %span 施設詳細（#{@institution.name}）
 .ins-show
   .ins-show--left
     .ins-show--left__short--one
