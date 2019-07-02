@@ -1,6 +1,7 @@
 - breadcrumb :edit_customer, @customer
 
-.top-title 編集（#{@customer.name}）
+.top-title
+  %span 編集（#{@customer.name}）
 .cus-new
   = form_with(model: @customer, local: true) do |f|
     .cus-new--left

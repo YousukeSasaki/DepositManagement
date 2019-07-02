@@ -1,6 +1,7 @@
 - breadcrumb :edit_institution, @institution
 
-.top-title 編集（#{@institution.name}）
+.top-title
+  %span 編集（#{@institution.name}）
 .ins-new
   = form_with(model: @institution, local: true) do |f|
     .ins-new--left

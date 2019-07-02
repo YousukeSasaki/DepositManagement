@@ -1,6 +1,7 @@
 - breadcrumb :new_transactions, @customer
 
-.top-title 取引登録（#{@customer.name}）
+.top-title
+  %span 取引登録（#{@customer.name}）
 .tra-new
   = form_with(model: @transaction, local: true) do |f|
     .tra-new--left

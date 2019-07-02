@@ -16,17 +16,19 @@
   }
   &__balance {
     display: flex;
-    width: 225px;
+    width: 235px;
     margin: 0 auto 20px;
     padding: 5px 10px;
     font-size: 20px;
     font-weight: bold;
     background-color: $cream;
+    border: dotted 3px $gray;
     &-left {
       display: inline;
     }
     &-right {
-      width: 135px;
+      display: inline;
+      width: 140px;
       text-align: right;
     }
   }

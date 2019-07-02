@@ -1,7 +1,8 @@
 = render 'layouts/sidebar'
 .wrapper
   = render "layouts/flash"
-  .top-title 職員情報
+  .top-title
+    %span 職員情報
   = form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f|
     .signup-form
       = render "devise/shared/error_messages", resource: current_user

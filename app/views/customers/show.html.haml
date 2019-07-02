@@ -1,7 +1,8 @@
 - breadcrumb :customer, @customer
 = render "layouts/delete_modal", path: customer_path
 
-.top-title 利用者詳細（#{@customer.name}）
+.top-title
+  %span 利用者詳細（#{@customer.name}）
 .cus-show
   .cus-show--left
     .cus-show--left__short--one
