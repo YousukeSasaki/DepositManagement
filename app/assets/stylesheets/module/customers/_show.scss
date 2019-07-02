@@ -5,6 +5,8 @@
   margin: 40px auto;
   border: solid 1px black;
   background-color: $cream;
+  border: solid 2px $gray;
+  border-radius: 10px;
   display: flex;
   & .required::after {
     content: '必須';
