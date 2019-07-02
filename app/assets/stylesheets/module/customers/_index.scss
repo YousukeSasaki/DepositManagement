@@ -36,7 +36,7 @@
         & .image {
           width: 69px;
           height: 69px;
-          background-size: cover;
+          object-fit: contain;
           display: block;
         }
       }

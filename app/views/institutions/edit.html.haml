@@ -41,7 +41,7 @@
     .ins-new--right
       %span.ins-new--right-title
         画像選択
-      .ins-new--right__default
       .ins-new--right__preview
+        = image_tag(@institution.image.url)
       %label{class: "ins-new--right__image"}
         = f.file_field :image

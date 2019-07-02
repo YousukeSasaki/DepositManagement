@@ -1,9 +1,5 @@
 $(function() {
 
-    $(document).on('ready', function() {
-        console.log("transaction.js OK");
-    });
-
     $(document).on("keyup", "#subject-number", function() {
         var input = $("#subject-number").val();
         $.ajax({

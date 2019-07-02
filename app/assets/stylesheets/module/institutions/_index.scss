@@ -28,7 +28,7 @@
         @include link_hover_no_line;
       }
       &-id {
-        min-width: 50px;
+        width: 50px;
       }
       &-image {
         width: 70px;
@@ -36,12 +36,12 @@
         & .image {
           width: 69px;
           height: 69px;
-          background-size: cover;
+          object-fit: contain;
           display: block;
         }
       }
       &-name {
-        min-width: 200px;
+        width: 200px;
       }
       &-type {
         width: 200px;
