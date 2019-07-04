@@ -3,7 +3,7 @@ class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   def index
-    @customers = Customer.all.order('id DESC')
+    @customers = Customer.all.order('id DESC').page(params[:page]).per(10)
   end
 
   def new

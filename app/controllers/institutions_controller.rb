@@ -31,7 +31,7 @@ class InstitutionsController < ApplicationController
   private
 
   def set_institutions
-    @institutions = Institution.all.order('id DESC')
+    @institutions = Institution.all.order('id DESC').page(params[:page]).per(10)
   end
 
   def set_institution

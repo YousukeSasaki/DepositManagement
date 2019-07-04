@@ -2,7 +2,7 @@ class TransactionsController < ApplicationController
   layout "main_application"
   before_action :set_transactions, only: :index
   before_action :set_transaction, only: [:show, :edit, :update, :destroy]
-  before_action :set_customers, only: [:index, :new_choice, :customer_choice]
+  before_action :set_customers, only: [:new_choice, :customer_choice]
   before_action :set_customer, only: [:new, :customer]
   before_action :set_customer_from_params, only: :create
   before_action :set_customer_from_transaction, only: [:show, :edit, :update, :destroy]
@@ -54,13 +54,13 @@ class TransactionsController < ApplicationController
   end
 
   def customer
-    @transactions = Transaction.where(customer_id: @customer.id).order('id DESC')
+    @transactions = Transaction.where(customer_id: @customer.id).order('id DESC').page(params[:page]).per(10)
   end
 
   private
 
   def set_transactions
-    @transactions = Transaction.all.order('id DESC')
+    @transactions = Transaction.all.order('id DESC').page(params[:page]).per(10)
   end
 
   def set_transaction
@@ -68,7 +68,7 @@ class TransactionsController < ApplicationController
   end
 
   def set_customers
-    @customers = Customer.all.order('id DESC')
+    @customers = Customer.all.order('id DESC').page(params[:page]).per(10)
   end
 
   def set_customer

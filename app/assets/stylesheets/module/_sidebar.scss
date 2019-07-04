@@ -2,8 +2,8 @@
   float: left;
   width: 124px;
   height: 100vh;
-  color: #0053A6;
-  background-color: #E4EEF6;
+  color: $side-text;
+  background-color: $side-background;
   border-right: solid 1px $darkblue;
   overflow: auto;
   & a {
