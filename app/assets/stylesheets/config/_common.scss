@@ -45,9 +45,23 @@ html body{
   text-align: center;
   span {
     padding: 5px 15px;
-    background-color: rgb(2,190,204);
+    background-color: $aqua;
     border: ridge 2px $litegray;
     border-radius: 5px;
+  }
+}
+
+.pagination {
+  display: flex;
+  width: 100%;
+  margin: 30px 0;
+  justify-content: center;
+  & > li > a {
+    background-color: $cream;
+  }
+  & > .active {
+    background-color: $side-text;
+    border-radius: 4px;
   }
 }
 

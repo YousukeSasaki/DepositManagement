@@ -14,3 +14,4 @@
       %th.cus-index__table__col-address.center 住所
 
     = render partial: "transactions/new_choice", collection: @customers, as: "customer"
+  = paginate(@customers)
