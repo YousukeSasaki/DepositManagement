@@ -32,10 +32,10 @@
 |フロントエンド|JavaScript(jQuery)|
 |DB|MySQL|
 |本番環境|AWS EC2|
-|画像アップロード|carrierwave, AWS S3|
+|画像アップロード|carrierwave(Gem), AWS S3|
 |自動デプロイ|capistrano|
-|ユーザー管理|devise|
-|パンくず表示機能|gretel|
+|ユーザー管理|devise(Gem)|
+|パンくず表示機能|gretel(Gem)|
 
 
 ## データベース
