@@ -40,6 +40,9 @@
 
 ## データベース
 
+### ER図
+https://www.lucidchart.com/documents/view/897485a6-e12e-4a28-8b21-f7523e892768/0
+
 ### usersテーブル
 
 |Column|Type|Options|
