@@ -8,5 +8,7 @@
   %td.cus-index__table__item-name.left #{customer.name}
   %td.cus-index__table__item-kana.left #{customer.kana}
   %td.cus-index__table__item-sex.center #{sex_change(customer.sex)}
-  %td.cus-index__table__item-birthday.center #{customer.birthday}
+  %td.cus-index__table__item-birthday.center
+    - if customer.birthday.present?
+      #{customer.birthday}
   %td.cus-index__table__item-address.left #{full_address(customer)}

@@ -6,6 +6,10 @@
     - else
       = image_tag "default.jpg", class: "image"
   %td.ins-index__table__item-name.left #{institution.name}
-  %td.ins-index__table__item-type.left #{institution.institution_type.name}
-  %td.ins-index__table__item-phone.center #{institution.phone_number_one}
+  %td.ins-index__table__item-type.left
+    - if institution.institution_type.present?
+      #{institution.institution_type.name}
+  %td.ins-index__table__item-phone.center
+    - if institution.phone_number_one.present?
+      #{institution.phone_number_one}
   %td.ins-index__table__item-address.left #{full_address(institution)}

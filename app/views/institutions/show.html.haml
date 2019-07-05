@@ -13,31 +13,47 @@
       .ins-show--left__field #{@institution.kana}
     .ins-show--left__short--one
       %label.ins-show--left__label 種別
-      .ins-show--left__field #{@institution.institution_type.name}
+      .ins-show--left__field
+        - if @institution.institution_type.present?
+          #{@institution.institution_type.name}
     .ins-show--left__long-box
       .ins-show--left__long--two
         %label.ins-show--left__label 電話番号１
-        .ins-show--left__field #{@institution.phone_number_one}
+        .ins-show--left__field
+          - if @institution.phone_number_one.present?
+            #{@institution.phone_number_one}
       .ins-show--left__long--two
         %label.ins-show--left__label 電話番号２
-        .ins-show--left__field #{@institution.phone_number_two}
+        .ins-show--left__field
+          - if @institution.phone_number_two.present?
+            #{@institution.phone_number_two}
     .ins-show--left__long-box
       .ins-show--left__postal_code
         %label.ins-show--left__label 郵便番号
-        .ins-show--left__field #{@institution.postal_code}
+        .ins-show--left__field
+          - if @institution.postal_code.present?
+            #{@institution.postal_code}
       .ins-show--left__prefecture
         %label.ins-show--left__label 都道府県
-        .ins-show--left__field #{@institution.prefecture.name}
+        .ins-show--left__field
+          - if @institution.prefecture.present?
+            #{@institution.prefecture.name}
       .ins-show--left__city
         %label.ins-show--left__label 市区町村
-        .ins-show--left__field #{@institution.city}
+        .ins-show--left__field
+          - if @institution.city.present?
+            #{@institution.city}
     .ins-show--left__long-box
       .ins-show--left__address
         %label.ins-show--left__label 番地
-        .ins-show--left__field #{@institution.address}
+        .ins-show--left__field
+          - if @institution.address.present?
+            #{@institution.address}
       .ins-show--left__building
         %label.ins-show--left__label 建物名
-        .ins-show--left__field #{@institution.building}
+        .ins-show--left__field
+          - if @institution.building.present?
+            #{@institution.building}
     .ins-show--left__long-box
       .ins-show--left__created_at
         %label.ins-show--left__label 登録日

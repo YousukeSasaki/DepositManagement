@@ -17,7 +17,7 @@ module CustomersHelper
   end
 
   def datetime_jp(datetime)
-    datetime = datetime.strftime('%Y年%m月%d日 %H:%M:%S')
+    datetime = datetime.strftime('%Y年%m月%d日 %H:%M')
     return datetime
   end
 end
