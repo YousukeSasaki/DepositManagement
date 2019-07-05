@@ -13,6 +13,7 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     if @customer.save
+      Balance.create(customer_id: @customer.id, balance: 0)
       flash[:flash_notice] = "登録が完了しました"
       redirect_to customers_path
     else
