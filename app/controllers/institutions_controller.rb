@@ -10,20 +10,20 @@ class InstitutionsController < ApplicationController
   def create
     @institution = Institution.new(institution_params)
     if @institution.save
-      flash[:notice] = "登録が完了しました"
+      flash[:flash_notice] = "登録が完了しました"
       redirect_to institutions_path
     else
-      flash.now[:alert] = '登録に失敗しました。必須項目を確認してください。'
+      flash.now[:flash_alert] = '登録に失敗しました。必須項目を確認してください。'
       render :new
     end
   end
 
   def update
     if @institution.update(institution_params)
-      flash.now[:notice] = "正常に変更されました"
+      flash.now[:flash_notice] = "正常に変更されました"
       render :edit
     else
-      flash.now[:alert] = '変更に失敗しました。必須項目を確認してください。'
+      flash.now[:flash_alert] = '変更に失敗しました。必須項目を確認してください。'
       render :edit
     end
   end

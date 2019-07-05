@@ -13,30 +13,30 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     if @customer.save
-      flash[:notice] = "登録が完了しました"
+      flash[:flash_notice] = "登録が完了しました"
       redirect_to customers_path
     else
-      flash.now[:alert] = '登録に失敗しました。必須項目を確認してください。'
+      flash.now[:flash_alert] = '登録に失敗しました。必須項目を確認してください。'
       render :new
     end
   end
 
   def update
     if @customer.update(customer_params)
-      flash.now[:notice] = "正常に変更されました"
+      flash.now[:flash_notice] = "正常に変更されました"
       render :edit
     else
-      flash.now[:alert] = '変更に失敗しました。必須項目を確認してください。'
+      flash.now[:flash_alert] = '変更に失敗しました。必須項目を確認してください。'
       render :edit
     end
   end
 
   def destroy
     if @customer.destroy
-      flash[:notice] = "削除されました"
+      flash[:flash_notice] = "削除されました"
       redirect_to customers_path
     else
-      flash[:alert] = '削除に失敗しました'
+      flash[:flash_alert] = '削除に失敗しました'
       redirect_to customer_path(@customer)
     end
   end
