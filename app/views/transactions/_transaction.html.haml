@@ -3,9 +3,7 @@
   %td.tra-index__table__item-c_id.center #{c_id_change(transaction)}
   %td.tra-index__table__item-date.center #{transaction.date}
   %td.tra-index__table__item-customer.center #{transaction.customer.name}
-  %td.tra-index__table__item-subject.center
-    - if transaction.subject.present?
-      #{transaction.subject.name}
+  %td.tra-index__table__item-subject.center #{transaction.subject.name}
   %td.tra-index__table__item-institution.center
     - if transaction.institution.present?
       #{transaction.institution.name}

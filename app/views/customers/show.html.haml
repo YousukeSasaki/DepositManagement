@@ -14,41 +14,61 @@
     .cus-show--left__short-box
       .cus-show--left__short--two
         %label.cus-show--left__label 生年月日
-        .cus-show--left__field #{@customer.birthday.strftime('%Y年%m月%d日')}
+        .cus-show--left__field
+          - if @customer.birthday.present?
+            #{@customer.birthday.strftime('%Y年%m月%d日')}
       .cus-show--left__short--two
         %label.cus-show--left__label 性別
         .cus-show--left__field #{sex_change(@customer.sex)}
     .cus-show--left__long-box
       .cus-show--left__long-three
         %label.cus-show--left__label 電話番号
-        .cus-show--left__field #{@customer.phone_number}
+        .cus-show--left__field
+          - if @customer.phone_number.present?
+            #{@customer.phone_number}
       .cus-show--left__long-three
         %label.cus-show--left__label 携帯電話番号
-        .cus-show--left__field #{@customer.cell_phone_number}
+        .cus-show--left__field
+          - if @customer.cell_phone_number.present?
+            #{@customer.cell_phone_number}
       .cus-show--left__long-three
         %label.cus-show--left__label 緊急連絡先
-        .cus-show--left__field #{@customer.emergency_phone_number}
+        .cus-show--left__field
+          - if @customer.emergency_phone_number.present?
+            #{@customer.emergency_phone_number}
     .cus-show--left__long-box
       .cus-show--left__postal_code
         %label.cus-show--left__label 郵便番号
-        .cus-show--left__field #{@customer.postal_code}
+        .cus-show--left__field
+          - if @customer.postal_code.present?
+            #{@customer.postal_code}
       .cus-show--left__prefecture
         %label.cus-show--left__label 都道府県
-        .cus-show--left__field #{@customer.prefecture.name}
+        .cus-show--left__field
+          - if @customer.prefecture.present?
+            #{@customer.prefecture.name}
       .cus-show--left__city
         %label.cus-show--left__label 市区町村
-        .cus-show--left__field #{@customer.city}
+        .cus-show--left__field
+          - if @customer.city.present?
+            #{@customer.city}
     .cus-show--left__long-box
       .cus-show--left__address
         %label.cus-show--left__label 番地
-        .cus-show--left__field #{@customer.address}
+        .cus-show--left__field
+          - if @customer.address.present?
+            #{@customer.address}
       .cus-show--left__building
         %label.cus-show--left__label 建物名
-        .cus-show--left__field #{@customer.building}
+        .cus-show--left__field
+          - if @customer.building.present?
+            #{@customer.building}
     .cus-show--left__long-box
       .cus-show--left__start_date
         %label.cus-show--left__label 利用開始日
-        .cus-show--left__field #{time_jp(@customer.start_date)}
+        .cus-show--left__field
+          - if @customer.start_date.present?
+            #{time_jp(@customer.start_date)}
       .cus-show--left__created_at
         %label.cus-show--left__label 登録日
         .cus-show--left__field #{datetime_jp(@customer.created_at)}
