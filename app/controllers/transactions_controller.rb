@@ -18,10 +18,10 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new(create_transaction_params)
     if @transaction.save && @balance_record.update(balance: balance_calc_new)
-      flash[:notice] = "登録が完了しました"
+      flash[:flash_notice] = "登録が完了しました"
       redirect_to new_transactions_path(@customer)
     else
-      flash.now[:alert] = '登録に失敗しました。必須項目を確認してください。'
+      flash.now[:flash_alert] = '登録に失敗しました。必須項目を確認してください。'
       render :new
     end
   end
@@ -32,10 +32,10 @@ class TransactionsController < ApplicationController
     @customer = @transaction.customer
     if @transaction.update(update_transaction_params)
       @balance_record.update(balance: balance_calc_update)
-      flash[:notice] = "正常に変更されました"
+      flash[:flash_notice] = "正常に変更されました"
       redirect_to customer_transactions_path(@customer)
     else
-      flash.now[:alert] = '変更に失敗しました  必須項目を確認してください'
+      flash.now[:flash_alert] = '変更に失敗しました  必須項目を確認してください'
       render :edit
     end
   end
@@ -45,10 +45,10 @@ class TransactionsController < ApplicationController
     @balance_record = Balance.find_by(customer_id: @customer.id)
     if @transaction.destroy
       @balance_record.update(balance: balance_calc_destroy)
-      flash[:alert] = '取引を削除しました'
+      flash[:flash_alert] = '取引を削除しました'
       redirect_to customer_transactions_path(@customer)
     else
-      flash[:alert] = '取引削除に失敗しました'
+      flash[:flash_alert] = '取引削除に失敗しました'
       render :edit
     end
   end
