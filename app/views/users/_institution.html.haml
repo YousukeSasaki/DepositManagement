@@ -6,4 +6,6 @@
     - else
       = image_tag "default.jpg", class: "image"
   %td.user-index--box__institutions__table__item-name.left #{institution.name}
-  %td.user-index--box__institutions__table__item-type.left #{institution.institution_type.name}
+  %td.user-index--box__institutions__table__item-type.left
+    - if institution.institution_type.present?
+      #{institution.institution_type.name}
