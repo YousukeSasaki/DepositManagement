@@ -2,9 +2,7 @@
   %td.user-index__transactions__table__item-id.center #{transaction.id}
   %td.user-index__transactions__table__item-date.center #{transaction.date}
   %td.user-index__transactions__table__item-customer.center #{transaction.customer.name}
-  %td.user-index__transactions__table__item-subject.center
-    - if transaction.subject.present?
-      #{transaction.subject.name}
+  %td.user-index__transactions__table__item-subject.center #{transaction.subject.name}
   %td.user-index__transactions__table__item-institution.center
     - if transaction.institution.present?
       #{transaction.institution.name}

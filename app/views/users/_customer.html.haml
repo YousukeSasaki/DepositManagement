@@ -7,4 +7,6 @@
       = image_tag "default.jpg", class: "image"
   %td.user-index--box__customers__table__item-name.left #{customer.name}
   %td.user-index--box__customers__table__item-sex.center #{sex_change(customer.sex)}
-  %td.user-index--box__customers__table__item-birthday.center #{customer.birthday}
+  %td.user-index--box__customers__table__item-birthday.center
+    - if customer.birthday.present?
+      #{customer.birthday}
