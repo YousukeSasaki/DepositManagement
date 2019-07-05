@@ -32,7 +32,6 @@
       background-color: $white;
       border: solid 1px $gray;
       overflow: auto;
-      // white-space: nowrap;
     }
     &__short {
       &-box {
@@ -74,12 +73,12 @@
       width: 325px;
     }
     &__start_date {
-      min-width: 125px;
+      min-width: 135px;
       margin-right: 5px;
       font-size: 14px;
     }
     &__created_at, &__updated_at {
-      width: 185px;
+      width: 180px;
       margin-right: 5px;
       font-size: 14px;
     }
