@@ -1,5 +1,5 @@
 class Transaction < ApplicationRecord
-  # associate
+  # association
   belongs_to :user
   belongs_to :customer
   belongs_to :subject
