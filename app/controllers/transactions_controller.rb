@@ -16,14 +16,16 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    @transaction = Transaction.new(create_transaction_params)
-    if @transaction.save && @balance_record.update(balance: balance_calc_new)
-      flash[:flash_notice] = "登録が完了しました"
-      redirect_to new_transactions_path(@customer)
-    else
-      flash.now[:flash_alert] = '登録に失敗しました。必須項目を確認してください。'
-      render :new
+    ActiveRecord::Base.transaction do
+      @transaction = Transaction.new(create_transaction_params)
+      @transaction.save!
+      @balance_record.update!(balance: balance_calc_new)
     end
+    flash[:flash_notice] = "登録が完了しました"
+    redirect_to new_transactions_path(@customer)
+    rescue
+    flash.now[:flash_alert] = '登録に失敗しました。必須項目を確認してください。'
+    render :new
   end
 
   def update

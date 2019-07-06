@@ -26,7 +26,7 @@ $(function() {
         $(".tra-new--left__amount--number > p").text("¥ " + amount_str);
     });
 
-    $(document).on('input', '#transaction_amount', function() {
+    $(document).on("input", ".max-limit", function() {
         var value = this.value;
         var length = this.value.length;
         var maxlength = $(this).attr('maxlength');

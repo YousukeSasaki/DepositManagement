@@ -32,7 +32,7 @@
         .tra-new--left__box
           .tra-new--left__subject-number
             %label.tra-new--left__label 科目コード
-            %input{type: "number", id: "subject-number"}
+            %input{type: "number", class: "max-limit", id: "subject-number", maxlength: "3"}
           .tra-new--left__subject-menu
             = f.label :subject_id, "科目名", class: "tra-new--left__label"
             %span.required
@@ -41,7 +41,7 @@
           .tra-new--left__amount--input
             = f.label :amount, "金額", class: "tra-new--left__label"
             %span.required
-            = f.number_field :amount, class: "tra-new--left__field", maxlength: "10"
+            = f.number_field :amount, class: "tra-new--left__field max-limit", maxlength: "9"
           .tra-new--left__amount--number
             %p  ¥
         .tra-new--left__one
@@ -49,7 +49,7 @@
           = f.collection_select :institution_id, @institutions, :id, :name, {prompt: "---"}, {class: "tra-new--left__field"}
         .tra-new--left__one
           = f.label :summary, "摘要", class: "tra-new--left__label"
-          = f.text_field :summary, class: "tra-new--left__field"
+          = f.text_field :summary, class: "tra-new--left__field", maxlength: "100"
         = f.submit "登録", class: "tra-new--left__submit"
       .tra-new--right
         .tra-new--right__preview
