@@ -1,8 +1,8 @@
 class Customer < ApplicationRecord
   # association
   has_many :institutions
-  has_many :transactions
-  has_one :balance
+  has_many :transactions, dependent: :destroy
+  has_one :balance, dependent: :destroy, class_name: "Balance"
   accepts_nested_attributes_for :balance
   belongs_to :prefecture, optional: true
 
