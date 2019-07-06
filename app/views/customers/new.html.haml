@@ -8,11 +8,11 @@
       .cus-new--left__one
         = f.label :name, "名前", class: "cus-new--left__label"
         %span.required
-        = f.text_field :name, class: "cus-new--left__field"
+        = f.text_field :name, class: "cus-new--left__field", maxlength: "12"
       .cus-new--left__one
         = f.label :kana, "フリガナ", class: "cus-new--left__label"
         %span.required
-        = f.text_field :kana, class: "cus-new--left__field"
+        = f.text_field :kana, class: "cus-new--left__field", maxlength: "12"
       .cus-new--left__box
         .cus-new--left__birthday
           = f.label :birthday, "生年月日", class: "cus-new--left__label birthday"
@@ -35,28 +35,28 @@
           = f.radio_button :sex, 1
       .cus-new--left__one
         = f.label :phone_number, "電話番号", class: "cus-new--left__label"
-        = f.number_field :phone_number, class: "cus-new--left__field"
+        = f.text_field :phone_number, class: "cus-new--left__field", maxlength: "13"
       .cus-new--left__one
         = f.label :cell_phone_number, "携帯電話番号", class: "cus-new--left__label"
-        = f.number_field :cell_phone_number, class: "cus-new--left__field"
+        = f.text_field :cell_phone_number, class: "cus-new--left__field", maxlength: "13"
       .cus-new--left__one
         = f.label :emergency_phone_number, "緊急連絡先", class: "cus-new--left__label"
-        = f.number_field :emergency_phone_number, class: "cus-new--left__field"
+        = f.text_field :emergency_phone_number, class: "cus-new--left__field", maxlength: "13"
       .cus-new--left__one
         = f.label :postal_code, "郵便番号", class: "cus-new--left__label"
-        = f.number_field :postal_code, class: "cus-new--left__field"
+        = f.text_field :postal_code, class: "cus-new--left__field max-limit", maxlength: "8"
       .cus-new--left__one
         = f.label :prefecture_id, "都道府県", class: "cus-new--left__label"
         = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, {class: "cus-new--left__field"}
       .cus-new--left__one
         = f.label :city, "市区町村", class: "cus-new--left__label"
-        = f.text_field :city, class: "cus-new--left__field"
+        = f.text_field :city, class: "cus-new--left__field", maxlength: "30"
       .cus-new--left__one
         = f.label :address, "番地", class: "cus-new--left__label"
-        = f.text_field :address, class: "cus-new--left__field"
+        = f.text_field :address, class: "cus-new--left__field", maxlength: "30"
       .cus-new--left__one
         = f.label :building, "建物名", class: "cus-new--left__label"
-        = f.text_field :building, class: "cus-new--left__field"
+        = f.text_field :building, class: "cus-new--left__field", maxlength: "30"
       .cus-new--left__start_date
         = f.label :start_date, "利用開始日", class: "cus-new--left__label"
         .cus-new--left__start_date--select

@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def full_address(data)
-    data.prefecture.name.present? ? prefecture = data.prefecture.name : prefecture = ""
+    data.prefecture.present? ? prefecture = data.prefecture.name : prefecture = ""
     data.city.present? ? city = data.city : city = ""
     data.address.present? ? address = data.address : address = ""
     data.building.present? ? building = data.building : building = ""
