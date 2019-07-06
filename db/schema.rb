@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_28_041242) do
+ActiveRecord::Schema.define(version: 2019_07_06_045423) do
 
   create_table "balances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "customer_id"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_041242) do
     t.text "image"
     t.string "phone_number_one"
     t.string "phone_number_two"
-    t.integer "postal_code"
+    t.string "postal_code"
     t.bigint "prefecture_id"
     t.string "city"
     t.text "address"
