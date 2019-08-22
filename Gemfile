@@ -83,3 +83,4 @@ gem 'jquery-turbolinks'
 gem 'gretel'
 gem 'fog-aws'
 gem 'kaminari'
+gem 'nokogiri', ">= 1.10.4"
