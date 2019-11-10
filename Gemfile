@@ -85,3 +85,4 @@ gem 'fog-aws'
 gem 'kaminari'
 gem 'nokogiri', ">= 1.10.4"
 gem "loofah", ">= 2.3.1"
+gem "rubyzip", ">= 1.3.0"
