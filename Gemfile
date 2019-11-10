@@ -69,7 +69,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'devise'
+gem 'devise', >= '4.7.1'
 gem 'pry-rails'
 gem 'haml-rails'
 gem 'erb2haml'
@@ -84,3 +84,5 @@ gem 'gretel'
 gem 'fog-aws'
 gem 'kaminari'
 gem 'nokogiri', ">= 1.10.4"
+gem "loofah", ">= 2.3.1"
+gem "rubyzip", ">= 1.3.0"
